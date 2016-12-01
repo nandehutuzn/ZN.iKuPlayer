@@ -1,0 +1,10 @@
+E:\GitHub\iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\bin\Debug\ZN.iKuPlayer.Tools.dll
+E:\GitHub\iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\bin\Debug\ZN.iKuPlayer.Tools.pdb
+E:\GitHub\iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.dll
+E:\GitHub\iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.pdb
+E:\GitHub\iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.csprojResolveAssemblyReference.cache
+E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\bin\Debug\ZN.iKuPlayer.Tools.dll
+E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\bin\Debug\ZN.iKuPlayer.Tools.pdb
+E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.dll
+E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.pdb
+E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.csprojResolveAssemblyReference.cache

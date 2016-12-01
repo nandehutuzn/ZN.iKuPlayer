@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZN.iKuPlayer.WPF", "ZN.iKuPlayer.WPF\ZN.iKuPlayer.WPF.csproj", "{3B2DF75C-995F-4B6A-AA9C-9642A08EB90D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZN.iKuPlayer.BASS", "ZN.iKuPlayer.BASS\ZN.iKuPlayer.BASS.csproj", "{5CCCE44E-A79A-46BD-9CA8-CF0B6840ED12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZN.iKuPlayer.Tools", "ZN.iKuPlayer.Tools\ZN.iKuPlayer.Tools.csproj", "{CC1CAFE1-F709-4DC9-96C7-7661FB815741}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B2DF75C-995F-4B6A-AA9C-9642A08EB90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B2DF75C-995F-4B6A-AA9C-9642A08EB90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B2DF75C-995F-4B6A-AA9C-9642A08EB90D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B2DF75C-995F-4B6A-AA9C-9642A08EB90D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CCCE44E-A79A-46BD-9CA8-CF0B6840ED12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCCE44E-A79A-46BD-9CA8-CF0B6840ED12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCCE44E-A79A-46BD-9CA8-CF0B6840ED12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCCE44E-A79A-46BD-9CA8-CF0B6840ED12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1CAFE1-F709-4DC9-96C7-7661FB815741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1CAFE1-F709-4DC9-96C7-7661FB815741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1CAFE1-F709-4DC9-96C7-7661FB815741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1CAFE1-F709-4DC9-96C7-7661FB815741}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
