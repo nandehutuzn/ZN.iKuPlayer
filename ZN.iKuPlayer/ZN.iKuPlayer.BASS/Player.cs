@@ -258,6 +258,7 @@ namespace ZN.iKuPlayer.BASS
                 MusicID3 musicInfo = GetMusicInfoByBass(s);
                 double seconds = Bass.BASS_ChannelBytes2Seconds(s, Bass.BASS_ChannelGetLength(s));
                 musicInfo.Duration = Helper.Seconds2Time(seconds);
+                musicInfo.Path = filePath;
                 Bass.BASS_StreamFree(s);  //释放文件
                 return musicInfo;
             }

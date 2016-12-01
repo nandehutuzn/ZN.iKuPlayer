@@ -50,5 +50,10 @@ namespace ZN.iKuPlayer.BASS
         /// 音乐时长    非 ID3 属性
         /// </summary>
         public string Duration;
+
+        /// <summary>
+        /// 音乐文件路径
+        /// </summary>
+        public string Path;
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Interop;
 
 namespace ZN.iKuPlayer.WPF.Modules.View
 {
@@ -19,9 +20,11 @@ namespace ZN.iKuPlayer.WPF.Modules.View
     /// </summary>
     public partial class MainUC : Window
     {
+        public IntPtr MainHandle { get { return new WindowInteropHelper(this).Handle; } }
         public MainUC()
         {
             InitializeComponent();
+            
         }
     }
 }

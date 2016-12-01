@@ -16,3 +16,12 @@ E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\bin\Debug\ZN.iKuPla
 E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\obj\Debug\ZN.iKuPlayer.BASS.csprojResolveAssemblyReference.cache
 E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\obj\Debug\ZN.iKuPlayer.BASS.dll
 E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\obj\Debug\ZN.iKuPlayer.BASS.pdb
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\bin\Debug\ZN.iKuPlayer.BASS.dll
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\bin\Debug\ZN.iKuPlayer.BASS.pdb
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\bin\Debug\Bass.Net.dll
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\bin\Debug\ZN.Dotnet.Tools.dll
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\bin\Debug\ZN.iKuPlayer.Tools.dll
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\bin\Debug\ZN.iKuPlayer.Tools.pdb
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\obj\Debug\ZN.iKuPlayer.BASS.csprojResolveAssemblyReference.cache
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\obj\Debug\ZN.iKuPlayer.BASS.dll
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\obj\Debug\ZN.iKuPlayer.BASS.pdb

@@ -7,7 +7,7 @@
              d1p1:Ignorable="d">
   <Application.Resources>
     <ResourceDictionary>
-      <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:ZN.iKuPlayer.WPF.ViewModel" />
-    </ResourceDictionary>
+            <!--<vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:ZN.iKuPlayer.WPF.ViewModel" />-->
+        </ResourceDictionary>
   </Application.Resources>
 </Application>
