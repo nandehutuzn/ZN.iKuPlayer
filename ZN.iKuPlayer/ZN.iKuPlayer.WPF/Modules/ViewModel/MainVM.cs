@@ -19,24 +19,185 @@ using System.Collections.ObjectModel;
 using ZN.iKuPlayer.WPF.Modules.Model;
 using ZN.iKuPlayer.Tools;
 using System.IO;
+using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace ZN.iKuPlayer.WPF.Modules.ViewModel
 {
     class MainVM : ViewModelBase
     {
         private IntPtr _handle;
+        /// <summary>
+        /// Player 全局唯一实例
+        /// </summary>
+        private Player _player;
+
+        /// <summary>
+        /// Config 全局唯一实例
+        /// </summary>
+        private Config _config;
         public MainVM()
         {
             _handle = Process.GetCurrentProcess().MainWindowHandle;
+            Initlize();
             //string file = @"C:\林俊杰.mp3";
             //Player.GetInstance((IntPtr)0).OpenFile(file);
             //Player.GetInstance((IntPtr)0).Play();
+        }
+
+        private void Initlize()
+        {
+            _player = Player.GetInstance(_handle);
+            _config = Config.GetInstance();
+            //时钟设置
+            _progressClock.Interval = new TimeSpan(0, 0, 0, 0, 250);
+            _progressClock.Tick += _progressClock_Tick;
+            //频谱线程
+            _playerForLyric = Player.GetInstance(_handle);
+            _spectrumWorker.WorkerReportsProgress = true;
+            _spectrumWorker.WorkerSupportsCancellation = true;
+            _spectrumWorker.ProgressChanged += _spectrumWorker_ProgressChanged;
+            _spectrumWorker.DoWork += _spectrumWorker_DoWork;
+            //歌词线程
+            _lyricWorker.WorkerReportsProgress = true;
+            _lyricWorker.WorkerSupportsCancellation = true;
+            _lyricWorker.ProgressChanged += _lyricWorker_ProgressChanged;
+            _lyricWorker.DoWork += _lyricWorker_DoWork;
+        }
+
+        /// <summary>
+        /// 播放进度时钟
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void _progressClock_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!_draggingProgress)
+                {
+                    SliderValue = _player.Position;//播放进度
+                    TimeNow = Helper.Seconds2Time(SliderValue);//播放时间
+                    //任务栏进度条
+                }
+                if (_player.StopStatus)
+                {
+                    switch (_config.PlayModel)
+                    { 
+                        case Model.PlayModel.SingleCycle://单曲循环
+                            SelectedItem = PlayListUI[_config.PlayListIndex];
+                            PlayListOpen(sender);
+                            break;
+                        case Model.PlayModel.OrderPlay://顺序播放
+                            Stop();
+                            if (_config.PlayListIndex >= PlayListUI.Count - 1)
+                            {
+                                Clocks(false);
+                                _config.PlayListIndex = 0;
+                                SelectedItem = PlayListUI[_config.PlayListIndex];
+                                SingerBackground = new ImageBrush();
+                            }
+                            else
+                            {
+                                SelectedItem = PlayListUI[++_config.PlayListIndex];
+                                PlayListOpen(sender);
+                            }
+                            break;
+                        case Model.PlayModel.CirculationList://列表循环
+                            Stop();
+                            _config.PlayListIndex = _config.PlayListIndex >= PlayListUI.Count - 1 ? 0 : ++_config.PlayListIndex;
+                            SelectedItem = PlayListUI[_config.PlayListIndex];
+                            PlayListOpen(sender);
+                            break;
+                        case Model.PlayModel.ShufflePlayback:
+                            Stop();
+                            int rand;
+                            do{
+                                rand = Helper.Random.Next(0, PlayListUI.Count);
+                            } while (PlayListUI.Count > 1 && rand == _config.PlayListIndex);
+                            SelectedItem = PlayListUI[rand];
+                            _config.PlayListIndex = rand;
+                            PlayListOpen(sender);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Exception(ex);
+            }
+        }
+
+        /// <summary>
+        /// 歌词处理线程
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void _lyricWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                BackgroundWorker worker = sender as BackgroundWorker;
+                while (!worker.CancellationPending)
+                {
+                    if (LyricObj != null)
+                    {
+                        if (_addedLyric)
+                            _valueLyric = LyricObj.FindLrc((int)(_player.Position * 1000), out _indexLyric, out _lrcLyric, out _lenLyric, out _progressLyric);
+                        worker.ReportProgress(0);
+                    }
+                    System.Threading.Thread.Sleep(50);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Exception(ex);
+            }
+        }
+
+        /// <summary>
+        /// 歌词变化处理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void _lyricWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Exception(ex);
+            }
+        }
+
+        void _spectrumWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void _spectrumWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// 用于歌词线程访问player对象
         /// </summary>
         private Player _playerForLyric;
+
+        /// <summary>
+        /// 进度条拖动状态
+        /// </summary>
+        private bool _draggingProgress = false;
+
+        /// <summary>
+        /// 播放进度时钟
+        /// </summary>
+        private DispatcherTimer _progressClock = new DispatcherTimer();
 
         #region  歌词数据
         private bool _addedLyric = false;
@@ -109,6 +270,18 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             set {
                 _sliderMax = value;
                 RaisePropertyChanged("SliderMax");
+            }
+        }
+
+        private double _sliderValue;
+        /// <summary>
+        /// 进度条的值
+        /// </summary>
+        public double SliderValue {
+            get { return _sliderValue; }
+            set {
+                _sliderValue = value;
+                RaisePropertyChanged("SliderValue");
             }
         }
 
@@ -477,6 +650,11 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                     TitleLabel = information.Title;
                     SingerLabel = information.Artist;
                     AlbumLabel = information.Album;
+                    //歌词
+                    LoadLyric(information.Title, information.Artist, Helper.GetHash(file), (int)Math.Round(player.Length * 1000), file);
+                    Clocks(true);
+                    //加载背景图片
+                    LoadImage(information.Artist);
                 }
                 else
                 {
@@ -516,14 +694,78 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                         return;
                 }
                 if (File.Exists(App.WorkPath + "\\lyrics\\" + a + "-" + t + ".src"))
-                { 
-                
+                {
+                    LyricObj = new Model.Lyric(App.WorkPath + "\\lyrics\\" + a + "-" + t + ".src");
+                    //序列化保存
+                    Lyric.SaveSRCX(App.WorkPath + "\\lyrics\\" + a + "-" + t + ".srcx", LyricObj);
                 }
+                else if (File.Exists(App.WorkPath + "\\lyrics\\" + a + "-" + t + ".lrc"))
+                {
+                    LyricObj = new Model.Lyric(App.WorkPath + "\\lyrics\\" + a + "-" + t + ".lrc");
+                    Lyric.SaveSRCX(App.WorkPath + "\\lyrics\\" + a + "-" + t + ".srcx", LyricObj);
+                }
+                else if (File.Exists(path.Remove(path.LastIndexOf('.') + 1) + "src"))
+                {
+                    LyricObj = new Model.Lyric(path.Remove(path.LastIndexOf('.') + 1) + "src");
+                    //序列化保存
+                    Lyric.SaveSRCX(App.WorkPath + "\\lyrics\\" + a + "-" + t + ".srcx", LyricObj);
+                }
+                else
+                    LyricObj = new Model.Lyric(title, artist, hash, time, App.WorkPath + "\\lyrics\\" + a + "-" + t + ".src");
+
+                LyricObj.SrcxPath = App.WorkPath + "\\lyrics\\" + a + "-" + t + ".srcx";
             }
             catch (Exception ex)
             {
                 Logger.Instance.Exception(ex);
             }
+        }
+
+        /// <summary>
+        /// 加载歌手图片到窗口显示
+        /// </summary>
+        /// <param name="artist"></param>
+        private void LoadImage(string artist)
+        {
+            try
+            {
+                SingerImage.GetImage(artist, ++SingerImage.GetID, filePath =>
+                    {
+                        BitmapImage image = new BitmapImage(new Uri(filePath));
+                        SingerBackground = new ImageBrush() { ImageSource = image };
+                    });
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Exception(ex);
+            }
+        }
+
+        /// <summary>
+        /// 启动/停止时钟
+        /// </summary>
+        /// <param name="start"></param>
+        private void Clocks(bool start)
+        {
+            if (start)
+                _progressClock.Start();
+            else
+                _progressClock.Stop();
+        }
+
+        /// <summary>
+        /// 停止播放
+        /// </summary>
+        private void Stop()
+        {
+            _player.Stop();
+            PauseBtnVisibility = false;
+            PlayBtnVisibility = true;
+            //任务栏等设置后期加上
+
+            SliderValue = 0;
+            TimeNow = Helper.Seconds2Time(SliderValue);
+            Clocks(false);
         }
     }
 }

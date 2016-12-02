@@ -149,6 +149,11 @@ namespace ZN.iKuPlayer.BASS
         }
 
         /// <summary>
+        /// 是否停止播放状态
+        /// </summary>
+        public bool StopStatus { get { return _stream == 0; } }
+
+        /// <summary>
         /// 是否已打开过文件
         /// </summary>
         public bool OpenedFile {
