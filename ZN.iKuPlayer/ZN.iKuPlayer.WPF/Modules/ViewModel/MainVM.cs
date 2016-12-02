@@ -21,6 +21,7 @@ using ZN.iKuPlayer.Tools;
 using System.IO;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using System.Windows.Media.Effects;
 
 namespace ZN.iKuPlayer.WPF.Modules.ViewModel
 {
@@ -48,6 +49,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         private void Initlize()
         {
             _player = Player.GetInstance(_handle);
+            Config.LoadConfig(App.WorkPath + "\\config.db");
             _config = Config.GetInstance();
             //时钟设置
             _progressClock.Interval = new TimeSpan(0, 0, 0, 0, 250);
@@ -166,7 +168,58 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         {
             try
             {
+                if (!_addedLyric)
+                {
+                    LstLrc.Clear();
+                    if (!LyricObj.Ready)
+                    {   
+                        ProgressBar pb = new ProgressBar();
+                        pb.Value = 1;
+                        pb.Tag = "正在加载歌词";
+                        pb.Foreground = new SolidColorBrush(Colors.Yellow);
+                        pb.Background = new SolidColorBrush(Colors.White);
+                        pb.HorizontalAlignment = HorizontalAlignment.Right;
+                        pb.Maximum = 1;
+                        LstLrc.Add(pb);
+                    }
+                    else if (LyricObj.Lines == 0)
+                    {
+                        ProgressBar pb = new ProgressBar();
+                        pb.Value = 0;
+                        pb.Tag = "无歌词";
+                        pb.Foreground = new SolidColorBrush(Colors.Yellow);
+                        pb.Background = new SolidColorBrush(Colors.White);
+                        pb.HorizontalAlignment = HorizontalAlignment.Right;
+                        pb.Maximum = 1;
+                        LstLrc.Add(pb);
+                        _addedLyric = true;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < LyricObj.Lines; i++)
+                        {
+                            ProgressBar pb = new ProgressBar();
+                            pb.Value = 0;
+                            pb.Tag = LyricObj.GetLine((uint)i);
+                            pb.Foreground = new SolidColorBrush(Colors.Yellow);
+                            pb.Background = new SolidColorBrush(Colors.White);
+                            pb.HorizontalAlignment = HorizontalAlignment.Right;
+                            pb.Maximum = 1;
+                            LstLrc.Add(pb);
+                        }
+                        _addedLyric = true;
+                    }
+                }
+                else
+                {
+                    foreach (ProgressBar p in LstLrc)
+                        p.Value = 0;
 
+                    ProgressBar pb = LstLrc[_indexLyric];
+                    pb.Value = _config.LyricAnimation ? _valueLyric : 1;
+                    DependencyTopProperty = _indexLyric <= 3 ? 0 :
+                        -(_indexLyric - 4) * 68 / 3 - (_config.LyricMove ? _progressLyric * 68 / 3 : 0);
+                }
             }
             catch (Exception ex)
             {
@@ -174,14 +227,24 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
+        /// <summary>
+        /// 频谱计算
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void _spectrumWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
+        /// <summary>
+        /// 更新频谱显示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void _spectrumWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         /// <summary>
@@ -253,7 +316,8 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         /// <summary>
         /// 播放列表选中
         /// </summary>
-        public object SelectedItem {
+        public object SelectedItem
+        {
             get { return _selectedItem; }
             set {
                 _selectedItem = value;
@@ -369,11 +433,11 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
-        private ObservableCollection<string> _lstLrc = new ObservableCollection<string>();
+        private ObservableCollection<ProgressBar> _lstLrc = new ObservableCollection<ProgressBar>();
         /// <summary>
         /// 歌词集合
         /// </summary>
-        public ObservableCollection<string> LstLrc {
+        public ObservableCollection<ProgressBar> LstLrc{
             get { return _lstLrc; }
             set {
                 _lstLrc = value;
@@ -399,7 +463,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
-        private string _title;
+        private string _title = "绑定测试";
         /// <summary>
         /// 窗口标题
         /// </summary>
@@ -411,6 +475,114 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
+        private object _dependencyTopProperty;
+        /// <summary>
+        /// 歌词 StackPanel中  Canvas的附加属性
+        /// </summary>
+        public object DependencyTopProperty {
+            get { return _dependencyTopProperty; }
+            set {
+                _dependencyTopProperty = value;
+                RaisePropertyChanged("DependencyTopProperty");
+            }
+        }
+
+        private double _windowLeft;
+        /// <summary>
+        /// 窗口左边缘相对于桌面的位置
+        /// </summary>
+        public double WindowLeft {
+            get { return _windowLeft; }
+            set {
+                _windowLeft = value;
+                RaisePropertyChanged("WindowLeft");
+            }
+        }
+
+        private double _windowTop;
+        /// <summary>
+        /// 窗口上边缘相对于桌面的位置
+        /// </summary>
+        public double WindowTop {
+            get { return _windowTop; }
+            set {
+                _windowTop = value;
+                RaisePropertyChanged("WindowTop");
+            }
+        }
+
+        private double _windowWidth = 800;
+        /// <summary>
+        /// 窗口宽度
+        /// </summary>
+        public double WindowWidth {
+            get { return _windowWidth; }
+            set {
+                _windowWidth = value;
+                RaisePropertyChanged("WindowWidth");
+            }
+        }
+
+        private double _windowHeight = 600;
+        /// <summary>
+        /// 窗口高度
+        /// </summary>
+        public double WindowHeight {
+            get { return _windowHeight; }
+            set {
+                _windowHeight = value;
+                RaisePropertyChanged("WindowHeight");
+            }
+        }
+
+        private bool _playListVisibility;
+        /// <summary>
+        /// 播放列表可见性
+        /// </summary>
+        public bool PlayListVisibility {
+            get { return _playListVisibility; }
+            set {
+                _playListVisibility = value;
+                RaisePropertyChanged("PlayListVisibility");
+            }
+        }
+
+        private double _shadowBlurRadius;
+        /// <summary>
+        /// 播放列表按钮 阴影部分模糊效果半径
+        /// </summary>
+        public double ShadowBlurRadius {
+            get { return _shadowBlurRadius; }
+            set {
+                _shadowBlurRadius = value;
+                RaisePropertyChanged("ShadowBlurRadius");
+            }
+        }
+
+        private double _volumeBarValue;
+        /// <summary>
+        /// 音量值
+        /// </summary>
+        public double VolumeBarValue {
+            get { return _volumeBarValue; }
+            set {
+                _volumeBarValue = value;
+                RaisePropertyChanged("VolumeBarValue");
+            }
+        }
+
+        private int _comboBoxIndex;
+        /// <summary>
+        /// 播放顺序选项 ComboBox 索引
+        /// </summary>
+        public int ComboBoxIndex {
+            get { return _comboBoxIndex; }
+            set {
+                _comboBoxIndex = value;
+                RaisePropertyChanged("ComboBoxIndex");
+            }
+        }
+
         private RelayCommand _loadedCommand;
         /// <summary>
         /// 载入
@@ -419,7 +591,66 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             get {
                 return _loadedCommand ?? (_loadedCommand = new RelayCommand(() =>
                     {
-                        Config.LoadConfig(App.WorkPath + "\\config.db");
+                        SingerImage.Path = App.WorkPath + "\\singer";
+                        _spectrumWorker.RunWorkerAsync();
+                        _lyricWorker.RunWorkerAsync();
+                        //窗口位置
+                        if (_config.Position.X > -WindowWidth &&
+                            _config.Position.X < SystemParameters.PrimaryScreenWidth &&
+                            _config.Position.Y > -WindowHeight &&
+                            _config.Position.Y < SystemParameters.PrimaryScreenHeight)
+                        {
+                            WindowLeft = _config.Position.X;
+                            WindowTop = _config.Position.Y;
+                        }
+                        else
+                        {
+                            _config.Position.X = WindowLeft;
+                            _config.Position.Y = WindowTop;
+                        }
+                        //播放列表状态
+                        PlayListVisibility = _config.PlayListVisible ? true : false;
+                        ShadowBlurRadius = _config.PlayListVisible ? 20 : 0;
+                        //音量
+                        _player.Volumn = _config.Volumn;
+                        VolumeBarValue = _config.Volumn;
+                        //加载播放列表
+                        LoadPlayList();
+                        //SelectedItem = PlayListUI[_config.PlayListIndex];
+                        SelectedItem = PlayListUI.Count > 0 ? PlayListUI[_config.PlayListIndex] : null;
+                        switch (_config.PlayModel)
+                        {
+                            case PlayModel.SingleCycle:
+                                ComboBoxIndex = 2;
+                                break;
+                            case PlayModel.OrderPlay:
+                                ComboBoxIndex = 1;
+                                break;
+                            case PlayModel.CirculationList:
+                                ComboBoxIndex = 0;
+                                break;
+                            case PlayModel.ShufflePlayback:
+                                ComboBoxIndex = 3;
+                                break;
+                            default:
+                                break;
+                        }
+                        //后续添加任务栏设置
+                        //启动参数
+                        if (App.Args.Length > 0)
+                        {
+                            SelectedItem = PlayListUI[AddToPlayList(App.Args)];
+                            PlayListOpen(null);
+                        }
+                        else if (_config.AutoPlay)
+                            PlayListOpen(null);
+                        //桌面歌词
+                        if (_config.ShowDesktopLtric)
+                        {
+                            _desktopLyric = new DesktopLyric();
+                            _desktopLyric.Show();
+                        }
+                        Config.Loaded = true;
                     }));
             }
         }
@@ -534,6 +765,23 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         public RelayCommand OpenFileCommand {
             get {
                 return _openFileCommand ?? (_openFileCommand = new RelayCommand(() => OpenFile()));
+            }
+        }
+
+        /// <summary>
+        /// 加载播放列表
+        /// </summary>
+        private void LoadPlayList()
+        {
+            PlayList.LoadFile(out _playListConfig, App.WorkPath + "\\Playlist.db");
+            foreach (var music in _playListConfig.List)
+            {
+                MusicID3 musicUI = new MusicID3();
+                musicUI.Title = music.Title;
+                musicUI.Duration = music.Duration == "" ? "" : (" - " + music.Duration);
+                musicUI.Artist = music.Artist == "" ? music.Path : music.Artist;
+                musicUI.Album = music.Album == "" ? "" : (" - " + music.Album);
+                PlayListUI.Add(musicUI);
             }
         }
 

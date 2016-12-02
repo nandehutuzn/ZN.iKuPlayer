@@ -8,7 +8,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         mc:Ignorable="d"
-        Title="MainUC" Height="600" Width="800" WindowStartupLocation="CenterScreen" Icon="/Image/iKu.ico"
+        Title="{Binding Title}" Height="{Binding WindowHeight, Mode=TwoWay}" Width="{Binding WindowWidth, Mode=TwoWay}" 
+        WindowStartupLocation="CenterScreen" Icon="/Image/iKu.ico" ResizeMode="CanMinimize" AllowDrop="true" ScrollViewer.VerticalScrollBarVisibility="Disabled"
+		Style="{DynamicResource windowStyle}" Background="{Binding SingerBackground}"
         DataContext="{Binding Source={x:Static ComManage:PlayerViewModelLocator.Instance}, Path=MainViewModel}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">

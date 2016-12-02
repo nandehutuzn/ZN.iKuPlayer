@@ -49,12 +49,12 @@ namespace ZN.iKuPlayer.BASS
             }
         }
 
-        ~Player()
-        {
-            Stop();
-            Bass.BASS_Stop();//停止所有
-            Bass.BASS_Free();//释放Bass库
-        }
+        //~Player()
+        //{
+        //    Stop();
+        //    Bass.BASS_Stop();//停止所有
+        //    Bass.BASS_Free();//释放Bass库
+        //}
 
         /// <summary>
         /// 返回播放器单例

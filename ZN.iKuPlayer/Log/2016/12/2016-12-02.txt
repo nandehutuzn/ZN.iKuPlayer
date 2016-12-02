@@ -1,0 +1,6 @@
+11:20:27:418  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+14:27:20:150  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39

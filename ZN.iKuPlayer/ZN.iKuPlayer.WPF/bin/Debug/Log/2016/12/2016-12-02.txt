@@ -1,0 +1,68 @@
+11:26:28:363  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+11:27:53:185  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+11:29:46:369  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+14:27:46:530  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+14:27:47:485  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+14:38:21:418  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+16:28:19:733  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+16:29:56:559  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+16:34:4:298  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+16:39:58:901  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+17:15:29:3  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+17:34:0:195  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+17:34:0:843  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+17:50:50:557  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+17:50:51:200  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+17:54:16:569  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+17:54:17:117  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172

@@ -122,3 +122,5 @@ E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\Mo
 E:\GitHub\ZN.iKu\ZN.iKuPlayer-master\ZN.iKuPlayer\ZN.iKuPlayer.WPF\bin\Debug\ZN.iKuPlayer.WPF.exe.config
 E:\GitHub\ZN.iKu\ZN.iKuPlayer-master\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\ZN.iKuPlayer.WPF.exe
 E:\GitHub\ZN.iKu\ZN.iKuPlayer-master\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\ZN.iKuPlayer.WPF.pdb
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\AppResources.baml
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\MainWindowResources.baml

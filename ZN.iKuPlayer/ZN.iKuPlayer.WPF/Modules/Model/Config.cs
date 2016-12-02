@@ -76,10 +76,10 @@ namespace ZN.iKuPlayer.WPF.Modules.Model
         /// <summary>
         /// 窗口位置
         /// </summary>
-        public Point Position {
-            get { return _position; }
-            set { _position = value; }
-        }
+        public Point Position;// {
+        //    get { return _position; }
+        //    set { _position = value; }
+        //}
 
         private bool _autoPlay = false;
         /// <summary>
@@ -164,18 +164,21 @@ namespace ZN.iKuPlayer.WPF.Modules.Model
         {
             try
             {
-                using (Stream fStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+                if (File.Exists(path))
                 {
-                    BinaryFormatter binFormat = new BinaryFormatter();
-                    _instance = (Config)binFormat.Deserialize(fStream);
+                    using (Stream fStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        BinaryFormatter binFormat = new BinaryFormatter();
+                        _instance = (Config)binFormat.Deserialize(fStream);
+                    }
                 }
-            }
-            catch (FileNotFoundException)
-            {
-                using (Stream fStream = new FileStream(path, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+                else
                 {
-                    _instance = new Config();
-                    _instance._position.X = _instance._position.Y = int.MinValue;
+                    using (Stream fStream = new FileStream(path, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+                    {
+                        _instance = new Config();
+                        _instance._position.X = _instance._position.Y = int.MinValue;
+                    }
                 }
             }
             catch (Exception ex)

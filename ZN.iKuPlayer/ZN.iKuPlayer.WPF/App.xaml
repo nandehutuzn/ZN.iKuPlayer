@@ -4,10 +4,14 @@
              StartupUri="Modules/View/MainUC.xaml" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:loacl="clr-namespace:ZN.iKuPlayer.WPF"
              d1p1:Ignorable="d">
   <Application.Resources>
-    <ResourceDictionary>
-            <!--<vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:ZN.iKuPlayer.WPF.ViewModel" />-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="AppResources.xaml"/>
+                <ResourceDictionary Source="MainWindowResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-  </Application.Resources>
+    </Application.Resources>
 </Application>
