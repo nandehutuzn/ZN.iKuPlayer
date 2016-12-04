@@ -11,11 +11,11 @@ namespace ZN.iKuPlayer.WPF.Modules.Model
     /// </summary>
     [Serializable]
     enum PlayModel
-    {
+    { 
         /// <summary>
-        /// 单曲循环
+        /// 列表循环
         /// </summary>
-        SingleCycle,
+        CirculationList,  //这里的顺序要和UI上一致
 
         /// <summary>
         /// 顺序播放
@@ -23,9 +23,9 @@ namespace ZN.iKuPlayer.WPF.Modules.Model
         OrderPlay,
 
         /// <summary>
-        /// 列表循环
+        /// 单曲循环
         /// </summary>
-        CirculationList,
+        SingleCycle,
 
         /// <summary>
         /// 随机播放

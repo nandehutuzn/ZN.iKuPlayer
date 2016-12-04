@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using ZN.iKuPlayer.WPF.Modules.ViewModel;
 
 namespace ZN.iKuPlayer.WPF.Modules.View
 {
@@ -23,8 +24,22 @@ namespace ZN.iKuPlayer.WPF.Modules.View
         public IntPtr MainHandle { get { return new WindowInteropHelper(this).Handle; } }
         public MainUC()
         {
-            InitializeComponent();
-            
+            InitializeComponent(); 
+        }
+
+        private void mainUC_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void Progress_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainVM.DraggingProgressSlider = true;
+        }
+
+        private void Progress_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MainVM.DraggingProgressSlider = false;
         }
     }
 }

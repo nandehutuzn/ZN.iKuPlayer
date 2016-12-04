@@ -89,7 +89,9 @@ namespace ZN.iKuPlayer.BASS
         public bool Mute {
             set {
                 _mute = value;
-                Volumn = value ? 0 : _volumn;
+                if (value)//取消静音时回复上次音量
+                    _lastVolumn = _volumn;
+                Volumn = value ? 0 : _lastVolumn;
             }
         }
 
@@ -97,6 +99,8 @@ namespace ZN.iKuPlayer.BASS
         /// 音量值记录
         /// </summary>
         private int _volumn = 100;
+
+        private int _lastVolumn = 100;
 
         /// <summary>
         /// 音量
@@ -151,7 +155,7 @@ namespace ZN.iKuPlayer.BASS
         /// <summary>
         /// 是否停止播放状态
         /// </summary>
-        public bool StopStatus { get { return _stream == 0; } }
+        public bool StopStatus { get { return Status == BASSActive.BASS_ACTIVE_STOPPED; } }
 
         /// <summary>
         /// 是否已打开过文件
@@ -205,6 +209,15 @@ namespace ZN.iKuPlayer.BASS
                 Bass.BASS_StreamFree(_stream);
             }
             _stream = 0;
+        }
+
+        /// <summary>
+        /// 退出
+        /// </summary>
+        public void Exit()
+        {
+            Bass.BASS_Stop();//停止所有
+            Bass.BASS_Free();//释放Bass库
         }
 
         /// <summary>

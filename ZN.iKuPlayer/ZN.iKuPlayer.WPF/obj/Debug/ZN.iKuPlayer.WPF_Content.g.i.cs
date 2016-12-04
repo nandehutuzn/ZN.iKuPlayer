@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/iku.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/bg2.png")]
 
 

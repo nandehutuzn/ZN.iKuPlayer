@@ -66,3 +66,83 @@
  Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
    在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+21:20:12:395  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+21:26:44:690  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 172
+22:7:29:900  Exception Message: 索引超出范围。必须为非负值并小于集合大小。
+参数名: index 
+ Position:    在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 System.Collections.ObjectModel.Collection`1.get_Item(Int32 index)
+   在 ZN.iKuPlayer.WPF.Modules.ViewModel.MainVM.OpenFile() 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\ViewModel\MainVM.cs:行号 822
+23:27:19:130  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:27:20:175  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:43:0:554  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:43:0:791  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:43:48:280  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:43:48:399  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:54:0:766  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:54:0:955  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:57:8:297  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:57:8:479  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:57:54:96  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:57:54:254  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+0:0:16:640  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+0:0:16:836  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+0:1:4:731  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+0:1:4:902  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+0:1:17:223  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+0:1:17:443  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+0:1:20:740  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+0:1:20:864  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+0:1:21:364  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+0:1:21:582  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39

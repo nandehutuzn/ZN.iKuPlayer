@@ -82,10 +82,10 @@ namespace ZN.iKuPlayer.WPF.Modules.Model
                                                     using (FileStream fs = new FileStream(Path + "\\" + artist + "_" + id++ + ".jpg", FileMode.Create, FileAccess.Write, FileShare.None))
                                                     {
                                                         fs.Write(ed.Result, 0, ed.Result.Length);
-                                                        fs.Flush();
-                                                        if (id == 1 && getid == SingerImage.GetID)
-                                                            callback(Path + "\\" + artist + "_0.jpg");
+                                                        fs.Flush();      
                                                     }
+                                                    if (id == 1 && getid == SingerImage.GetID)
+                                                        callback(Path + "\\" + artist + "_0.jpg");
                                                 }
                                             };
                                         download.DownloadDataAsync(new Uri(image));

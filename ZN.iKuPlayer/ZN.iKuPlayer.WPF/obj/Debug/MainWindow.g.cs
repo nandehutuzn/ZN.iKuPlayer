@@ -29,6 +29,7 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
+using ZN.iKuPlayer.WPF.Conver;
 
 
 namespace ZN.iKuPlayer.WPF {

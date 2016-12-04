@@ -505,12 +505,13 @@ namespace ZN.iKuPlayer.WPF.Modules.Model
                         lw.WidthBefore = double.MinValue;
                         sl.Content.Add(lw);
                     }
-                    //歌词全排序
-                    Sort();
-                    _ready = true;
-                    if (SrcxPath != null)
-                        SaveSRCX(SrcxPath, this);
+                    _lstText.Add(sl);        
                 }
+                //歌词全排序
+                Sort();
+                _ready = true;
+                if (SrcxPath != null)
+                    SaveSRCX(SrcxPath, this);
             }
             catch (Exception ex)
             {

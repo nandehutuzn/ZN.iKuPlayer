@@ -121,10 +121,7 @@ namespace ZN.iKuPlayer.WPF.Modules.Model
         /// <summary>
         /// 桌面歌词位置
         /// </summary>
-        public Point DesktopLyricPosition {
-            get { return _desktopLyricPosition; }
-            set { _desktopLyricPosition = value; }
-        }
+        public Point DesktopLyricPosition = new Point(double.MinValue, double.MinValue);
 
         private bool _desktopLyricLocked = false;
         /// <summary>
