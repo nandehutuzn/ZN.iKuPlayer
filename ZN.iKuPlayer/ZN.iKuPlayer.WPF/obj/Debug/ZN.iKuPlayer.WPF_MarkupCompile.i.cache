@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\
+E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\
 ZN.iKuPlayer.WPF
 none
 false
 DEBUG;TRACE
-E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\App.xaml
+E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\App.xaml
 6891513565
 
-41423357721
-241154515668
+411455177244
+241405946882
 AppResources.xaml;MainWindow.xaml;MainWindowResources.xaml;Modules\View\DesktopLyric.xaml;Modules\View\MainUC.xaml;Modules\View\Setting.xaml;
 
-False
+True
 

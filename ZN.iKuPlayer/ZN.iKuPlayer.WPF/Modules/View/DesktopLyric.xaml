@@ -45,9 +45,9 @@
     </Window.Resources>
     <Canvas>
         <!-- 两行歌词-->
-        <ProgressBar x:Name="LrcTop" Style="{DynamicResource DesktopLyric}" Value="{Binding LrcTopValue}" Tag="{Binding LrcTopTag}" Canvas.Top="{Binding LrcTopTopProperty}" Canvas.Left="{Binding LrcTopLeftProperty}"
-                     Foreground="#FF00FFC5" Background="#EE888888" Maximum="1" IsTabStop="False" Canvas.Right="{Binding LrcTopRightProperty}"/>
-        <ProgressBar x:Name="LrcBottom" Style="{DynamicResource DesktopLyric}" Value="{Binding LrcBottomValue}" Tag="{Binding LrcBottomTag}" Foreground="#FF00FFC5"  Canvas.Top="{Binding LrcBottomTopProperty}" Canvas.Left="{Binding LrcBottomLeftProperty}"
-                     Background="#EE888888" Maximum="1" IsTabStop="False" Canvas.Right="{Binding LrcBottomRightProperty}"/>
+        <ProgressBar x:Name="LrcTop" Style="{DynamicResource DesktopLyric}" Value="{Binding LrcTopValue}" Tag="{Binding LrcTopTag}"  Canvas.Left="50"
+                     Foreground="#FF00FFC5" Background="#EE888888" Maximum="1" IsTabStop="False" />
+        <ProgressBar x:Name="LrcBottom" Style="{DynamicResource DesktopLyric}" Value="{Binding LrcBottomValue}" Tag="{Binding LrcBottomTag}" Foreground="#FF00FFC5" Canvas.Top="40"  Canvas.Right="50"
+                     Background="#EE888888" Maximum="1" IsTabStop="False" />
     </Canvas>
 </Window>

@@ -391,16 +391,19 @@
                     Canvas.Left="60" Value="{Binding VolumeBarValue, Mode=TwoWay}"/>
         </Canvas>
         <!-- 播放列表 -->
-        <Canvas x:Name="PlayList" Canvas.Left="10" Height="392" Width="766" Background="#CC000000" Opacity="0.9" 
+        <Canvas x:Name="PlayList" Canvas.Left="10" Height="392" Width="310" Background="#CC000000" Opacity="0.9" 
                 ClipToBounds="True" d:IsLocked="False"  Visibility="{Binding PlayListVisibility, 
             Converter={StaticResource boolToVisibility}}">
             <!--d:IsHidden="True"-->
             <!-- 播放列表 -->
-            <ListBox x:Name="List" Height="342" Canvas.Left="10" Canvas.Top="10" Width="746" Background="#4CFFFFFF" 
+            <ListBox x:Name="List" Height="342" Canvas.Left="10" Canvas.Top="10" Width="300" Background="#4CFFFFFF" 
                      Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
-                     ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Extended"/>
+                     ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Extended"
+                     ItemsSource="{Binding PlayListUI}" SelectedItem="{Binding SelectedItem}"
+                     ItemContainerStyle="{StaticResource ListBoxItemSongStyle}">
+            </ListBox>
             <!-- 播放模式 -->
-            <ComboBox x:Name="Model" Height="30" Canvas.Left="434" Canvas.Top="357" Width="106" Background="#CCFFFFFF" 
+            <ComboBox x:Name="Model" Height="30" Canvas.Left="10" Canvas.Top="357" Width="106" Background="#CCFFFFFF" 
                       BorderBrush="Transparent" Opacity="0.8" IsReadOnly="True" FontSize="20" 
                       FontFamily="Consolas" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                       ScrollViewer.VerticalScrollBarVisibility="Disabled" SelectedIndex="{Binding ComboBoxIndex, Mode=TwoWay}">
@@ -414,7 +417,7 @@
                               IsTabStop="False"/>
             </ComboBox>
             <!-- 删除按钮 -->
-            <Button x:Name="btnDelete" Height="30" Width="145" Canvas.Left="611" Canvas.Top="357" 
+            <Button x:Name="btnDelete" Height="30" Width="145" Canvas.Left="140" Canvas.Top="357" 
                     Style="{DynamicResource btnStyle}" Content="删除选中项" FontFamily="隶书" FontSize="24" Margin="0" 
                     Foreground="#CCFFFFFF" >
                 <Button.Resources>

@@ -38,7 +38,6 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         private Config _config;
         public MainVM()
         {
-            _handle = Process.GetCurrentProcess().MainWindowHandle;
             Initlize();
             BlackBackground = new ImageBrush();
             BlackBackground.ImageSource = Imaging.CreateBitmapSourceFromHBitmap(Properties.Resources.BG2.GetHbitmap(),
@@ -51,7 +50,6 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
 
         private void Initlize()
         {
-            _player = Player.GetInstance(_handle);
             Config.LoadConfig(App.WorkPath + "\\config.db");
             _config = Config.GetInstance();
             //_spectrumListUI = new ObservableCollection<SpectrumVM>();
@@ -1676,17 +1674,6 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         /// </summary>
         private PlayList _playListConfig;
 
-        private ObservableCollection<SpectrumVM> _spectrumListUI;
-        /// <summary>
-        /// 频谱总数据
-        /// </summary>
-        public ObservableCollection<SpectrumVM> SpectrumListUI{
-            get { return _spectrumListUI; }
-            set {
-                _spectrumListUI = value;
-                RaisePropertyChanged("SpectrumListUI");
-            }
-        }
 
         private SpectrumVM _currentSpectrum = new SpectrumVM();
         /// <summary>
@@ -1700,11 +1687,11 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
-        private ObservableCollection<object> _playListUI = new ObservableCollection<object>();
+        private ObservableCollection<MusicID3> _playListUI = new ObservableCollection<MusicID3>();
         /// <summary>
         /// 播放列表  -- 用于UI显示
         /// </summary>
-        public ObservableCollection<object> PlayListUI
+        public ObservableCollection<MusicID3> PlayListUI
         {
             get { return _playListUI; }
             set { 
@@ -1713,11 +1700,11 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
-        private object _selectedItem = new object();
+        private MusicID3 _selectedItem = new MusicID3();
         /// <summary>
         /// 播放列表选中
         /// </summary>
-        public object SelectedItem
+        public MusicID3 SelectedItem
         {
             get { return _selectedItem; }
             set {
@@ -2042,6 +2029,8 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             get {
                 return _loadedCommand ?? (_loadedCommand = new RelayCommand(() =>
                     {
+                        _handle = Process.GetCurrentProcess().MainWindowHandle;
+                        _player = Player.GetInstance(_handle);
                         SingerImage.Path = App.WorkPath + "\\singer";
                         _spectrumWorker.RunWorkerAsync();
                         _lyricWorker.RunWorkerAsync();
@@ -2122,7 +2111,8 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                         _player.Stop();
                         _player.Exit();
                         o.Close();
-                        Environment.Exit(0);
+                        //Environment.Exit(0);
+                        Application.Current.Shutdown();
                     }));
             }
         }
@@ -2427,7 +2417,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                     {
                         //added = true;
                         //检验音乐文件合法性并获取音乐信息
-                        MusicID3? info = Player.GetInformation(file);
+                        MusicID3 info = Player.GetInformation(file);
                         if (info == null)
                             continue;
                         //删除已存在项
@@ -2442,10 +2432,10 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                         //添加到列表
                         _playListConfig.List.Add(new PlayList.Music
                             {
-                                Title = info.Value.Title,
-                                Artist = info.Value.Artist,
-                                Album = info.Value.Album,
-                                Duration = info.Value.Duration,
+                                Title = info.Title,
+                                Artist = info.Artist,
+                                Album = info.Album,
+                                Duration = info.Duration,
                                 Path = file,
                             });
                     }

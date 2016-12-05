@@ -565,6 +565,20 @@
         </Setter>
     </Style>
 
-
+    <!--歌曲列表样式-->
+    <Style x:Key="ListBoxItemSongStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border>
+                        <Grid>
+                            <TextBlock  Text="{Binding Title}" FontSize="15" HorizontalAlignment="Left"/>
+                            <TextBlock  Text="{Binding Artist}" FontSize="12" HorizontalAlignment="Right"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>

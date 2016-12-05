@@ -264,7 +264,7 @@ namespace ZN.iKuPlayer.BASS
         /// </summary>
         /// <param name="filePath">文件路径</param>
         /// <returns>音乐ID3信息</returns>
-        public static MusicID3? GetInformation(string filePath)
+        public static MusicID3 GetInformation(string filePath)
         {
             try
             {

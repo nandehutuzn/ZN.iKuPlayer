@@ -13,6 +13,7 @@ using ZN.Dotnet.Tools;
 using ZN.iKuPlayer.Tools;
 using ZN.iKuPlayer.WPF.Template;
 using zlib;
+using System.Collections.Concurrent;
 
 namespace ZN.iKuPlayer.WPF.Modules.Model
 {
@@ -26,6 +27,7 @@ namespace ZN.iKuPlayer.WPF.Modules.Model
         /// 全部歌词
         /// </summary>
         private List<SingleLrc> _lstText;
+        
 
         /// <summary>
         /// 总时长

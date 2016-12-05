@@ -71,7 +71,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
-        private double _desktopLrcHeight = 250;
+        private double _desktopLrcHeight = 100;
         /// <summary>
         /// 桌面歌词高度
         /// </summary>
@@ -125,117 +125,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                 _lrcBottomBackground = value;
                 RaisePropertyChanged("LrcBottomBackground");
             }
-        }
-
-        private double _lrcActualHeight;
-        /// <summary>
-        /// 上行歌词元素呈现的高度
-        /// </summary>
-        public double LrcActualHeight {
-            get { return _lrcActualHeight; }
-            set {
-                _lrcActualHeight = value;
-                RaisePropertyChanged("LrcActualHeight");
-            }
-        }
-
-        private double _lrcTopActualWidth;
-        /// <summary>
-        /// 上行歌词元素呈现的宽度
-        /// </summary>
-        public double LrcTopActualWidth
-        {
-            get { return _lrcTopActualWidth; }
-            set
-            {
-                _lrcTopActualWidth = value;
-                RaisePropertyChanged("LrcTopActualWidth");
-            }
-        }
-
-        private double _lrcBottomActrualWidth;
-        /// <summary>
-        /// 下行歌词元素呈现的宽度
-        /// </summary>
-        public double LrcBottomActrualWidth {
-            get { return _lrcBottomActrualWidth; }
-            set {
-                _lrcBottomActrualWidth = value;
-                RaisePropertyChanged("_lrcBottomActrualWidth");
-            }
-        }
-
-        private double _lrcTopTopProperty;
-        /// <summary>
-        /// 上行歌词  Canvas附加Top属性值
-        /// </summary>
-        public double LrcTopTopProperty {
-            get { return _lrcTopTopProperty; }
-            set {
-                _lrcTopTopProperty = value;
-                RaisePropertyChanged("LrcTopTopProperty");
-            }
-        }
-
-        private double _lrcTopLeftProperty;
-        /// <summary>
-        /// 上行歌词  Canvas附加Left属性值
-        /// </summary>
-        public double LrcTopLeftProperty {
-            get { return _lrcTopLeftProperty; }
-            set {
-                _lrcTopLeftProperty = value;
-                RaisePropertyChanged("LrcTopLeftProperty");
-            }
-        }
-
-        private double _lrcTopRightProperty;
-        /// <summary>
-        /// 上行歌词  Canvas附加Right属性值
-        /// </summary>
-        public double LrcTopRightProperty {
-            get { return _lrcTopRightProperty; }
-            set {
-                _lrcTopRightProperty = value;
-                RaisePropertyChanged("LrcTopRightProperty");
-            }
-        }
-
-        private double _lrcBottomTopProperty;
-        /// <summary>
-        /// 下行歌词 对 Canvas附加Top属性
-        /// </summary>
-        public double LrcBottomTopProperty {
-            get { return _lrcBottomTopProperty; }
-            set {
-                _lrcBottomTopProperty = value;
-                RaisePropertyChanged("LrcBottomTopProperty");
-            }
-        }
-
-        private double _lrcBottomLeftProperty;
-        /// <summary>
-        /// 下行歌词 对 Canvas附加Left属性
-        /// </summary>
-        public double LrcBottomLeftProperty {
-            get { return _lrcBottomLeftProperty; }
-            set {
-                _lrcBottomLeftProperty = value;
-                RaisePropertyChanged("LrcBottomLeftProperty");
-            }
-        }
-
-        private double _lrcBottomRightProperty;
-        /// <summary>
-        /// 下行歌词 对 Canvas附加Right属性
-        /// </summary>
-        public double LrcBottomRightProperty {
-            get { return _lrcBottomRightProperty; }
-            set {
-                _lrcBottomRightProperty = value;
-                RaisePropertyChanged("LrcBottomRightProperty");
-            }
-        }
+        }  
 
         private object _lrcTopTag = "iKu Player";
         /// <summary>
@@ -359,31 +249,17 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         {
             try
             {
-                double h = 2 * LrcActualHeight + 10;
-                if (DesktopLrcHeight != h)
-                {
-                    double d = DesktopLrcHeight - h;
-                    DesktopLrcHeight = h;
-                    Move(DesktopLrcLeft, DesktopLrcTop + d);
-                    LrcTopTopProperty = DesktopLrcHeight - 2 * LrcActualHeight - 8;
-                    LrcBottomTopProperty = DesktopLrcHeight - LrcActualHeight;
-                }
                 if (e.ProgressPercentage == 1 || MainVM.LyricObj.Lines == 0)
                 {
                     LrcTopTag = "iKu Player";
                     LrcTopValue = 1;
                     LrcBottomTag = "";
-                    LrcTopLeftProperty = (DesktopLrcWidth - LrcTopActualWidth) / 2;
                     return;
                 }
                 //上下行歌词将会用到的绑定属性
                 string currentTag = "", anotherTag = "";
                 double currentValue, anotherValue;
-                double currentLeftProperty = 0, currentRightProperty = 0, anotherLeftProperty = 0, anotherRightProperty = 0;
-                double currentActualWidth, anotherActrualWidth;
                 bool anotherIsTop = _indexLyric % 2 == 0;
-                currentActualWidth = _indexLyric % 2 == 0 ? LrcBottomActrualWidth : LrcTopActualWidth;
-                anotherActrualWidth = _indexLyric % 2 == 0 ? LrcTopActualWidth : LrcBottomActrualWidth;
 
                 currentTag = MainVM.LyricObj.GetLine((uint)_indexLyric);
                 currentValue = _config.LyricAnimation ? _valueLyric : 1;
@@ -408,67 +284,23 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                     }
                     anotherValue = 0;
 
-                    if (anotherActrualWidth < DesktopLrcWidth)
-                    {
-                        if (anotherIsTop)
-                            anotherLeftProperty = 0d;
-                        else
-                            anotherRightProperty = 0d;
-                    }
-                    else
-                    {
-                        if (anotherValue == 0)
-                            anotherLeftProperty = 0d;
-                        else
-                            anotherRightProperty = 0d;
-                    }
-
-                    if (currentActualWidth <= DesktopLrcWidth)
-                    {
-                        currentLeftProperty = 0;
-                        currentRightProperty = 0d;
-                    }
-                    else if (_valueLyric * currentActualWidth < DesktopLrcWidth / 2)
-                    {
-                        currentLeftProperty = 0d;
-                    }
-                    else if (currentActualWidth - _valueLyric * currentActualWidth < DesktopLrcWidth / 2)
-                    {
-                        currentLeftProperty = DesktopLrcWidth - currentActualWidth;
-                    }
-                    else
-                    {
-                        currentLeftProperty = DesktopLrcWidth / 2 - _valueLyric * currentActualWidth;
-                    }
                 }
 
                 if (_indexLyric % 2 == 0)
                 {
                     LrcBottomTag = currentTag;
                     LrcBottomValue = currentValue;
-                    LrcBottomActrualWidth = currentActualWidth;
-                    LrcBottomLeftProperty = currentLeftProperty;
-                    LrcBottomRightProperty = currentRightProperty;
 
                     LrcTopTag = anotherTag;
                     LrcTopValue = anotherValue;
-                    LrcTopActualWidth = anotherActrualWidth;
-                    LrcTopLeftProperty = anotherLeftProperty;
-                    LrcTopRightProperty = anotherRightProperty;
                 }
                 else
                 {
                     LrcTopTag = currentTag;
                     LrcTopValue = currentValue;
-                    LrcTopActualWidth = currentActualWidth;
-                    LrcTopLeftProperty = currentLeftProperty;
-                    LrcTopRightProperty = currentRightProperty;
 
                     LrcBottomTag = anotherTag;
                     LrcBottomValue = anotherValue;
-                    LrcBottomActrualWidth = anotherActrualWidth;
-                    LrcBottomLeftProperty = anotherLeftProperty;
-                    LrcBottomRightProperty = anotherRightProperty;
                 }
             }
             catch (Exception ex)
