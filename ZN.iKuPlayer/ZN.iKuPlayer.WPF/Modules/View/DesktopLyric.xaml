@@ -1,10 +1,23 @@
 ﻿<Window x:Class="ZN.iKuPlayer.WPF.Modules.View.DesktopLyric"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:local ="clr-namespace:ZN.iKuPlayer.WPF.Modules.View"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="DesktopLyric" Width="800" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}"
-        AllowsTransparency="True" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True" Focusable="False"
-        IsTabStop="False" MinHeight="90" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Bottom"
-        FontFamily="宋体" FontSize="36" FontWeight="Bold" VerticalAlignment="Bottom" Height="250" Cursor="SizeAll">
+        xmlns:ComManage="clr-namespace:ZN.iKuPlayer.WPF.Modules.ComManage"
+        xmlns:mv="http://www.galasoft.ch/mvvmlight"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="DesktopLyric" Width="{Binding DesktopLrcWidth, Mode=TwoWay}" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}"
+        AllowsTransparency="True" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True" Focusable="False" Left="{Binding DesktopLrcLeft, Mode=TwoWay}"
+        IsTabStop="False" MinHeight="90" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Bottom" Top="{Binding DesktopLrcTop, Mode=TwoWay}"
+        FontFamily="宋体" FontSize="36" FontWeight="Bold" VerticalAlignment="Bottom" Height="{Binding DesktopLrcHeight, Mode=TwoWay}" Cursor="SizeAll"
+        DataContext="{Binding Source={x:Static ComManage:PlayerViewModelLocator.Instance}, Path=DesktopLrcViewModel}" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <mv:EventToCommand Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Window.Resources>
         <Style x:Key="DesktopLyric" TargetType="{x:Type ProgressBar}">
             <Setter Property="Foreground" Value="#01D328"/>
@@ -32,9 +45,9 @@
     </Window.Resources>
     <Canvas>
         <!-- 两行歌词-->
-        <ProgressBar x:Name="LrcTop" Style="{DynamicResource DesktopLyric}" Value="0" Tag="iKu Player" 
-                     Foreground="#FF00FFC5" Background="#EE888888" Maximum="1" IsTabStop="False"/>
-        <ProgressBar x:Name="LrcBottom" Style="{DynamicResource DesktopLyric}" Value="0" Tag="" Foreground="#FF00FFC5" 
-                     Background="#EE888888" Maximum="1" IsTabStop="False"/>
+        <ProgressBar x:Name="LrcTop" Style="{DynamicResource DesktopLyric}" Value="{Binding LrcTopValue}" Tag="{Binding LrcTopTag}" Canvas.Top="{Binding LrcTopTopProperty}" Canvas.Left="{Binding LrcTopLeftProperty}"
+                     Foreground="#FF00FFC5" Background="#EE888888" Maximum="1" IsTabStop="False" Canvas.Right="{Binding LrcTopRightProperty}"/>
+        <ProgressBar x:Name="LrcBottom" Style="{DynamicResource DesktopLyric}" Value="{Binding LrcBottomValue}" Tag="{Binding LrcBottomTag}" Foreground="#FF00FFC5"  Canvas.Top="{Binding LrcBottomTopProperty}" Canvas.Left="{Binding LrcBottomLeftProperty}"
+                     Background="#EE888888" Maximum="1" IsTabStop="False" Canvas.Right="{Binding LrcBottomRightProperty}"/>
     </Canvas>
 </Window>

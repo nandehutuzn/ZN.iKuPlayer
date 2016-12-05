@@ -40,7 +40,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         /// <summary>
         /// 歌词加载时钟
         /// </summary>
-        private BackgroundWorker _timer = new BackgroundWorker();
+        private BackgroundWorker _timer;
 
         /// <summary>
         /// 默认歌词背景色
@@ -88,6 +88,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             get { return _desktopLrcLeft; }
             set {
                 _desktopLrcLeft = value;
+                _config.DesktopLyricPosition.X = value;
                 RaisePropertyChanged("DesktopLrcLeft");
             }
         }
@@ -97,6 +98,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             get { return _desktopLrcTop; }
             set {
                 _desktopLrcTop = value;
+                _config.DesktopLyricPosition.Y = value;
                 RaisePropertyChanged("DesktopLrcTop");
             }
         }
@@ -137,41 +139,101 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
-        private double _lrcActualWidth;
+        private double _lrcTopActualWidth;
         /// <summary>
         /// 上行歌词元素呈现的宽度
         /// </summary>
-        public double LrcActualWidth
+        public double LrcTopActualWidth
         {
-            get { return _lrcActualWidth; }
+            get { return _lrcTopActualWidth; }
             set
             {
-                _lrcActualWidth = value;
-                RaisePropertyChanged("LrcActualWidth");
+                _lrcTopActualWidth = value;
+                RaisePropertyChanged("LrcTopActualWidth");
             }
         }
 
-        private double _lrcTopProperty;
+        private double _lrcBottomActrualWidth;
         /// <summary>
-        /// 上行歌词  Canvas附加属性值
+        /// 下行歌词元素呈现的宽度
         /// </summary>
-        public double LrcTopProperty {
-            get { return _lrcTopProperty; }
+        public double LrcBottomActrualWidth {
+            get { return _lrcBottomActrualWidth; }
             set {
-                _lrcTopProperty = value;
-                RaisePropertyChanged("LrcTopProperty");
+                _lrcBottomActrualWidth = value;
+                RaisePropertyChanged("_lrcBottomActrualWidth");
             }
         }
 
-        private double _lrcBottomProperty;
+        private double _lrcTopTopProperty;
         /// <summary>
-        /// 下行歌词 对 Canvas附加属性
+        /// 上行歌词  Canvas附加Top属性值
         /// </summary>
-        public double LrcBottomProperty {
-            get { return _lrcBottomProperty; }
+        public double LrcTopTopProperty {
+            get { return _lrcTopTopProperty; }
             set {
-                _lrcBottomProperty = value;
-                RaisePropertyChanged("LrcBottomProperty");
+                _lrcTopTopProperty = value;
+                RaisePropertyChanged("LrcTopTopProperty");
+            }
+        }
+
+        private double _lrcTopLeftProperty;
+        /// <summary>
+        /// 上行歌词  Canvas附加Left属性值
+        /// </summary>
+        public double LrcTopLeftProperty {
+            get { return _lrcTopLeftProperty; }
+            set {
+                _lrcTopLeftProperty = value;
+                RaisePropertyChanged("LrcTopLeftProperty");
+            }
+        }
+
+        private double _lrcTopRightProperty;
+        /// <summary>
+        /// 上行歌词  Canvas附加Right属性值
+        /// </summary>
+        public double LrcTopRightProperty {
+            get { return _lrcTopRightProperty; }
+            set {
+                _lrcTopRightProperty = value;
+                RaisePropertyChanged("LrcTopRightProperty");
+            }
+        }
+
+        private double _lrcBottomTopProperty;
+        /// <summary>
+        /// 下行歌词 对 Canvas附加Top属性
+        /// </summary>
+        public double LrcBottomTopProperty {
+            get { return _lrcBottomTopProperty; }
+            set {
+                _lrcBottomTopProperty = value;
+                RaisePropertyChanged("LrcBottomTopProperty");
+            }
+        }
+
+        private double _lrcBottomLeftProperty;
+        /// <summary>
+        /// 下行歌词 对 Canvas附加Left属性
+        /// </summary>
+        public double LrcBottomLeftProperty {
+            get { return _lrcBottomLeftProperty; }
+            set {
+                _lrcBottomLeftProperty = value;
+                RaisePropertyChanged("LrcBottomLeftProperty");
+            }
+        }
+
+        private double _lrcBottomRightProperty;
+        /// <summary>
+        /// 下行歌词 对 Canvas附加Right属性
+        /// </summary>
+        public double LrcBottomRightProperty {
+            get { return _lrcBottomRightProperty; }
+            set {
+                _lrcBottomRightProperty = value;
+                RaisePropertyChanged("LrcBottomRightProperty");
             }
         }
 
@@ -213,22 +275,23 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
-        private double _lrcTopPropertyCanvasLeft;
+        private double _lrcBottomValue;
         /// <summary>
-        /// 上行歌词 附加与Canvas的Left属性值
+        /// 下行歌词当前数量
         /// </summary>
-        public double LrcTopPropertyCanvasLeft {
-            get { return _lrcTopPropertyCanvasLeft; }
+        public double LrcBottomValue {
+            get { return _lrcBottomValue; }
             set {
-                _lrcTopPropertyCanvasLeft = value;
-                RaisePropertyChanged("LrcTopPropertyCanvasLeft");
+                _lrcBottomValue = value;
+                RaisePropertyChanged("LrcBottomValue");
             }
         }
 
-        private RelayCommand _loadCommand;
-        public RelayCommand LoadCommand {
+
+        private RelayCommand _loadedCommand;
+        public RelayCommand LoadedCommand{
             get {
-                return _loadCommand ?? (_loadCommand = new RelayCommand(() =>
+                return _loadedCommand ?? (_loadedCommand = new RelayCommand(() =>
                     {
                         try
                         {
@@ -243,6 +306,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                             else
                                 LrcTopBackground = LrcBottomBackground = new SolidColorBrush(Color.FromArgb(255, 0, 255, 197));
                             //时钟设置
+                            _timer = new BackgroundWorker();
                             _timer.WorkerReportsProgress = true;
                             _timer.WorkerSupportsCancellation = true;
                             _timer.ProgressChanged += _timer_ProgressChanged;
@@ -301,19 +365,111 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                     double d = DesktopLrcHeight - h;
                     DesktopLrcHeight = h;
                     Move(DesktopLrcLeft, DesktopLrcTop + d);
-                    LrcTopProperty = DesktopLrcHeight - 2 * LrcActualHeight - 8;
-                    LrcBottomProperty = DesktopLrcHeight - LrcActualHeight;
+                    LrcTopTopProperty = DesktopLrcHeight - 2 * LrcActualHeight - 8;
+                    LrcBottomTopProperty = DesktopLrcHeight - LrcActualHeight;
                 }
                 if (e.ProgressPercentage == 1 || MainVM.LyricObj.Lines == 0)
                 {
                     LrcTopTag = "iKu Player";
                     LrcTopValue = 1;
                     LrcBottomTag = "";
-                    LrcTopPropertyCanvasLeft = (DesktopLrcWidth - LrcActualWidth) / 2;
+                    LrcTopLeftProperty = (DesktopLrcWidth - LrcTopActualWidth) / 2;
                     return;
                 }
-                ProgressBar current, another;
-                
+                //上下行歌词将会用到的绑定属性
+                string currentTag = "", anotherTag = "";
+                double currentValue, anotherValue;
+                double currentLeftProperty = 0, currentRightProperty = 0, anotherLeftProperty = 0, anotherRightProperty = 0;
+                double currentActualWidth, anotherActrualWidth;
+                bool anotherIsTop = _indexLyric % 2 == 0;
+                currentActualWidth = _indexLyric % 2 == 0 ? LrcBottomActrualWidth : LrcTopActualWidth;
+                anotherActrualWidth = _indexLyric % 2 == 0 ? LrcTopActualWidth : LrcBottomActrualWidth;
+
+                currentTag = MainVM.LyricObj.GetLine((uint)_indexLyric);
+                currentValue = _config.LyricAnimation ? _valueLyric : 1;
+                if (_progressLyric < 0.5)
+                {
+                    //uint 在小于0时溢出，得到最大值
+                    string tag = MainVM.LyricObj.GetLine((uint)_indexLyric - 1);
+                    if (anotherTag != tag)
+                    {
+                        anotherTag = tag;
+                        anotherValue = 0.99;
+                    }
+                    anotherValue = _config.LyricAnimation ? 1 : 0;
+                }
+                else
+                {
+                    string tag = MainVM.LyricObj.GetLine((uint)_indexLyric + 1);
+                    if (anotherTag != tag)
+                    {
+                        anotherTag = tag;
+                        anotherValue = 0.01;
+                    }
+                    anotherValue = 0;
+
+                    if (anotherActrualWidth < DesktopLrcWidth)
+                    {
+                        if (anotherIsTop)
+                            anotherLeftProperty = 0d;
+                        else
+                            anotherRightProperty = 0d;
+                    }
+                    else
+                    {
+                        if (anotherValue == 0)
+                            anotherLeftProperty = 0d;
+                        else
+                            anotherRightProperty = 0d;
+                    }
+
+                    if (currentActualWidth <= DesktopLrcWidth)
+                    {
+                        currentLeftProperty = 0;
+                        currentRightProperty = 0d;
+                    }
+                    else if (_valueLyric * currentActualWidth < DesktopLrcWidth / 2)
+                    {
+                        currentLeftProperty = 0d;
+                    }
+                    else if (currentActualWidth - _valueLyric * currentActualWidth < DesktopLrcWidth / 2)
+                    {
+                        currentLeftProperty = DesktopLrcWidth - currentActualWidth;
+                    }
+                    else
+                    {
+                        currentLeftProperty = DesktopLrcWidth / 2 - _valueLyric * currentActualWidth;
+                    }
+                }
+
+                if (_indexLyric % 2 == 0)
+                {
+                    LrcBottomTag = currentTag;
+                    LrcBottomValue = currentValue;
+                    LrcBottomActrualWidth = currentActualWidth;
+                    LrcBottomLeftProperty = currentLeftProperty;
+                    LrcBottomRightProperty = currentRightProperty;
+
+                    LrcTopTag = anotherTag;
+                    LrcTopValue = anotherValue;
+                    LrcTopActualWidth = anotherActrualWidth;
+                    LrcTopLeftProperty = anotherLeftProperty;
+                    LrcTopRightProperty = anotherRightProperty;
+                }
+                else
+                {
+                    LrcTopTag = currentTag;
+                    LrcTopValue = currentValue;
+                    LrcTopActualWidth = currentActualWidth;
+                    LrcTopLeftProperty = currentLeftProperty;
+                    LrcTopRightProperty = currentRightProperty;
+
+                    LrcBottomTag = anotherTag;
+                    LrcBottomValue = anotherValue;
+                    LrcBottomActrualWidth = anotherActrualWidth;
+                    LrcBottomLeftProperty = anotherLeftProperty;
+                    LrcBottomRightProperty = anotherRightProperty;
+                }
             }
             catch (Exception ex)
             {

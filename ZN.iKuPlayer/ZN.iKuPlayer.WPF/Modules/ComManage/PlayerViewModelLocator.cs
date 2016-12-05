@@ -33,5 +33,13 @@ namespace ZN.iKuPlayer.WPF.Modules.ComManage
         public MainVM MainViewModel {
             get { return _mainViewModel ?? (_mainViewModel = new MainVM()); }
         }
+
+        private DesktopLrcVM _desktopLrcViewModel;
+        /// <summary>
+        /// 桌面歌词
+        /// </summary>
+        public DesktopLrcVM DesktopLrcViewModel {
+            get { return _desktopLrcViewModel ?? (_desktopLrcViewModel = new DesktopLrcVM()); }
+        }
     }
 }

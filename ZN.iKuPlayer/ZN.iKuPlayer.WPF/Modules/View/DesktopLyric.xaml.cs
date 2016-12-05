@@ -23,5 +23,10 @@ namespace ZN.iKuPlayer.WPF.Modules.View
         {
             InitializeComponent();
         }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

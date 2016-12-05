@@ -1655,6 +1655,16 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         /// 桌面歌词窗口
         /// </summary>
         private DesktopLyric _desktopLyric = null;
+        /// <summary>
+        /// 桌面歌词窗口
+        /// </summary>
+        public DesktopLyric DesktopLyric {
+            get { return _desktopLyric; }
+            set {
+                _desktopLyric = value;
+                RaisePropertyChanged("DesktopLyric");
+            }
+        }
 
         /// <summary>
         /// 菜单桌面歌词开关项
@@ -2186,14 +2196,14 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
 
                             if (config.ShowDesktopLtric)
                             {
-                                if (_desktopLyric == null)
-                                    _desktopLyric = new DesktopLyric();
-                                _desktopLyric.Show();
+                                if (DesktopLyric == null)
+                                    DesktopLyric = new DesktopLyric();
+                                DesktopLyric.Show();
                             }
-                            else if (_desktopLyric != null)
+                            else if (DesktopLyric != null)
                             {//关闭桌面歌词
-                                _desktopLyric.Close();
-                                _desktopLyric = null;
+                                DesktopLyric.Close();
+                                DesktopLyric = null;
                             }
                         }
                         catch (Exception ex)
