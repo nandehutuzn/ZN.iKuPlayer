@@ -71,26 +71,40 @@ namespace ZN.iKuPlayer.WPF.Modules.Model
                                 int id = 0;
                                 foreach (string image in images)
                                 {
-                                    if (!image.StartsWith("http"))
-                                        continue;
-                                    using (WebClient download = new WebClient())
+                                    try
                                     {
-                                        download.DownloadDataCompleted += (s, ed) =>
-                                            {
-                                                if (!ed.Cancelled && ed.Error == null)
+                                        if (!image.StartsWith("http"))
+                                            continue;
+                                        using (WebClient download = new WebClient())
+                                        {
+                                            download.DownloadDataCompleted += (s, ed) =>
                                                 {
-                                                    using (FileStream fs = new FileStream(Path + "\\" + artist + "_" + id++ + ".jpg", FileMode.Create, FileAccess.Write, FileShare.None))
+                                                    if (!ed.Cancelled && ed.Error == null)
                                                     {
-                                                        fs.Write(ed.Result, 0, ed.Result.Length);
-                                                        fs.Flush();      
+                                                        try
+                                                        {
+                                                            using (FileStream fs = new FileStream(Path + "\\" + artist + "_" + id++ + ".jpg", FileMode.Create, FileAccess.Write, FileShare.None))
+                                                            {
+                                                                fs.Write(ed.Result, 0, ed.Result.Length);
+                                                                fs.Flush();
+                                                            }
+                                                            if (id == 1 && getid == SingerImage.GetID)
+                                                                callback(Path + "\\" + artist + "_0.jpg");
+                                                        }
+                                                        catch (Exception ex)
+                                                        {
+                                                            Logger.Instance.Exception(ex);
+                                                        }
                                                     }
-                                                    if (id == 1 && getid == SingerImage.GetID)
-                                                        callback(Path + "\\" + artist + "_0.jpg");
-                                                }
-                                            };
-                                        download.DownloadDataAsync(new Uri(image));
+                                                };
+                                            download.DownloadDataAsync(new Uri(image));
+                                        }
                                     }
-                                }
+                                    catch (Exception ex)
+                                    {
+                                        Logger.Instance.Exception(ex);
+                                    }
+                                }  
                             }
                         };
                     wc.DownloadStringAsync(new Uri(url));

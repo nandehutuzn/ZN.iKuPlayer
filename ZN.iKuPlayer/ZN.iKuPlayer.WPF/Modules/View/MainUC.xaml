@@ -12,6 +12,35 @@
         WindowStartupLocation="CenterScreen" Icon="/Image/iKu.ico" ResizeMode="CanMinimize" AllowDrop="true" ScrollViewer.VerticalScrollBarVisibility="Disabled"
 		Style="{DynamicResource windowStyle}" Background="{Binding SingerBackground}" x:Name="mainUC" MouseLeftButtonDown="mainUC_MouseLeftButtonDown"
         DataContext="{Binding Source={x:Static ComManage:PlayerViewModelLocator.Instance}, Path=MainViewModel}">
+	<Window.Resources>
+		<SolidColorBrush x:Key="ListBorder" Color="#828790"/>
+        <Style x:Key="ListBoxStyle1" TargetType="{x:Type ListBox}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ListBox}">
+						<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="1" SnapsToDevicePixels="true">
+                            <ScrollViewer Focusable="false" Padding="{TemplateBinding Padding}"  Width="Auto" >
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" OpacityMask="#FFF1A8AF"/>
+                                
+                            </ScrollViewer>
+						</Border>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+							</Trigger>
+							<MultiTrigger>
+								<MultiTrigger.Conditions>
+									<Condition Property="IsGrouping" Value="true"/>
+									<Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+								</MultiTrigger.Conditions>
+								<Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+							</MultiTrigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Resources>
   
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -391,16 +420,21 @@
                     Canvas.Left="60" Value="{Binding VolumeBarValue, Mode=TwoWay}"/>
         </Canvas>
         <!-- 播放列表 -->
-        <Canvas x:Name="PlayList" Canvas.Left="10" Height="392" Width="310" Background="#CC000000" Opacity="0.9" 
+        <Canvas x:Name="PlayList" Canvas.Left="10" Height="392" Width="310" Background="Transparent" Opacity="0.9" 
                 ClipToBounds="True" d:IsLocked="False"  Visibility="{Binding PlayListVisibility, 
             Converter={StaticResource boolToVisibility}}">
             <!--d:IsHidden="True"-->
             <!-- 播放列表 -->
-            <ListBox x:Name="List" Height="342" Canvas.Left="10" Canvas.Top="10" Width="300" Background="#4CFFFFFF" 
+            <ListBox x:Name="List" Height="342" Canvas.Left="10" Canvas.Top="10" Width="300" Background="Transparent" 
                      Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                      ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Extended"
                      ItemsSource="{Binding PlayListUI}" SelectedItem="{Binding SelectedItem}"
-                     ItemContainerStyle="{StaticResource ListBoxItemSongStyle}">
+                     ItemContainerStyle="{StaticResource ListBoxItemSongStyle}" Style="{DynamicResource ListBoxStyle1}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <mv:EventToCommand Command="{Binding SelectedChangedCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </ListBox>
             <!-- 播放模式 -->
             <ComboBox x:Name="Model" Height="30" Canvas.Left="10" Canvas.Top="357" Width="106" Background="#CCFFFFFF" 
@@ -419,7 +453,7 @@
             <!-- 删除按钮 -->
             <Button x:Name="btnDelete" Height="30" Width="145" Canvas.Left="140" Canvas.Top="357" 
                     Style="{DynamicResource btnStyle}" Content="删除选中项" FontFamily="隶书" FontSize="24" Margin="0" 
-                    Foreground="#CCFFFFFF" >
+                    Foreground="#CCFFFFFF" Command="{Binding DeleteSelectedItemCommand}">
                 <Button.Resources>
                     <Style x:Key="btnStyle" TargetType="{x:Type Button}">
                         <Setter Property="Margin" Value="5,5,5,5"/>

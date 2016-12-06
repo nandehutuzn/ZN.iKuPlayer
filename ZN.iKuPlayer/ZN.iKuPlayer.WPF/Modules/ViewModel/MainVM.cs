@@ -2266,6 +2266,21 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
+        private RelayCommand _selectedChangedCommand;
+        /// <summary>
+        /// 播放列表选中项改变
+        /// </summary>
+        public RelayCommand SelectedChangedCommand {
+            get {
+                return _selectedChangedCommand ?? (_selectedChangedCommand = new RelayCommand(() =>
+                    {
+                        int index = PlayListUI.IndexOf(SelectedItem);
+                        _config.PlayListIndex = index;
+                        PlayListOpen(null);
+                    }));
+            }
+        }
+
         private RelayCommand _nextCommand;
         /// <summary>
         /// 下一曲按钮命令
@@ -2345,6 +2360,24 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                 return _volumeSoliderChangedCommand ?? (_volumeSoliderChangedCommand = new RelayCommand(() =>
                     {
 
+                    }));
+            }
+        }
+
+        private RelayCommand _deleteSelectedItemCommand;
+        /// <summary>
+        /// 删除选中项
+        /// </summary>
+        public RelayCommand DeleteSelectedItemCommand {
+            get {
+                return _deleteSelectedItemCommand ?? (_deleteSelectedItemCommand = new RelayCommand(() =>
+                    {
+                        int index = PlayListUI.IndexOf(SelectedItem);
+                        if (_config.PlayListIndex == index)
+                            _player.Stop();
+                        PlayListUI.RemoveAt(index);
+                        _playListConfig.List.RemoveAt(index);
+                        PlayList.SaveFile(ref _playListConfig, App.WorkPath + "\\Playlist.db");
                     }));
             }
         }
@@ -2492,6 +2525,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                     TitleLabel = information.Title;
                     SingerLabel = information.Artist;
                     AlbumLabel = information.Album;
+                    Title = information.Title;
                     //歌词
                     LoadLyric(information.Title, information.Artist, Helper.GetHash(file), (int)Math.Round(player.Length * 1000), file);
                     Clocks(true);
