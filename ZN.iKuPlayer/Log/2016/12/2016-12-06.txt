@@ -1,0 +1,112 @@
+22:20:10:330  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+22:20:10:369  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+22:47:47:489  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+22:47:47:492  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+22:47:48:62  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+22:47:48:63  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+22:56:51:879  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+22:56:51:880  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+22:56:52:510  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+22:56:52:511  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:37:38:663  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:37:38:670  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:37:39:290  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:37:39:290  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:45:11:382  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:45:11:384  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:45:11:939  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:45:11:939  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:49:7:638  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:49:7:639  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:50:50:472  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:50:50:473  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:50:51:151  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:50:51:151  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:54:13:676  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:54:13:679  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:54:14:270  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:54:14:270  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:56:11:788  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:56:11:789  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39
+23:56:40:83  Exception Message: 正在尝试对空流进行反序列化 
+ Position:    在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream, HeaderHandler handler, Boolean fCheck, Boolean isCrossAppDomain, IMethodCallMessage methodCallMessage)
+   在 System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(Stream serializationStream)
+   在 ZN.iKuPlayer.WPF.Modules.Model.Config.LoadConfig(String path) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Config.cs:行号 169
+23:56:40:87  Exception Message: “Un4seen.Bass.Bass”的类型初始值设定项引发异常。 
+ Position:    在 Un4seen.Bass.Bass.BASS_Init(Int32 device, Int32 freq, BASSInit flags, IntPtr win)
+   在 ZN.iKuPlayer.BASS.Player..ctor(IntPtr windowHandle) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.BASS\Player.cs:行号 39

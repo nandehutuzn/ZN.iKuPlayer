@@ -2525,7 +2525,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
                     TitleLabel = information.Title;
                     SingerLabel = information.Artist;
                     AlbumLabel = information.Album;
-                    Title = information.Title;
+                    Title = information.Title + " - " + SingerLabel;
                     //歌词
                     LoadLyric(information.Title, information.Artist, Helper.GetHash(file), (int)Math.Round(player.Length * 1000), file);
                     Clocks(true);

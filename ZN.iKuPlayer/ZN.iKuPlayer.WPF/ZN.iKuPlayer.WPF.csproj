@@ -82,6 +82,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Conver\BoolConvertVisibility.cs" />
+    <Compile Include="Modules\ComManage\ControlAttachProperty.cs" />
     <Compile Include="Modules\ComManage\PlayerViewModelLocator.cs" />
     <Compile Include="Modules\Model\Config.cs" />
     <Compile Include="Modules\Model\LrcWord.cs" />

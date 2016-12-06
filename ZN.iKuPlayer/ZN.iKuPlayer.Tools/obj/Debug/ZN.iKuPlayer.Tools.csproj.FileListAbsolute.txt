@@ -7,8 +7,8 @@ E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\bin\Debug\
 E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\bin\Debug\ZN.iKuPlayer.Tools.pdb
 E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.dll
 E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.pdb
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.csprojResolveAssemblyReference.cache
 E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\bin\Debug\ZN.iKuPlayer.Tools.dll
 E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\bin\Debug\ZN.iKuPlayer.Tools.pdb
 E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.dll
 E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.pdb
-E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.Tools\obj\Debug\ZN.iKuPlayer.Tools.csprojResolveAssemblyReference.cache

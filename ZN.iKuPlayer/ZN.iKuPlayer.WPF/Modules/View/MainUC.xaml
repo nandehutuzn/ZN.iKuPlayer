@@ -429,7 +429,7 @@
                      Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                      ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Extended"
                      ItemsSource="{Binding PlayListUI}" SelectedItem="{Binding SelectedItem}"
-                     ItemContainerStyle="{StaticResource ListBoxItemSongStyle}" Style="{DynamicResource ListBoxStyle1}">
+                     ItemContainerStyle="{StaticResource ListBoxItemSongStyle}" Style="{DynamicResource SimpleListBox}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="MouseDoubleClick">
                         <mv:EventToCommand Command="{Binding SelectedChangedCommand}"/>

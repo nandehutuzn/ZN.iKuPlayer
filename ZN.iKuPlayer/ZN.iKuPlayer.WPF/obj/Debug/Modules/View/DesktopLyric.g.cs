@@ -31,6 +31,7 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
+using ZN.iKuPlayer.WPF;
 using ZN.iKuPlayer.WPF.Modules.ComManage;
 using ZN.iKuPlayer.WPF.Modules.View;
 
