@@ -90,6 +90,8 @@
     <Compile Include="Modules\Model\NativeMethods.cs" />
     <Compile Include="Modules\Model\PlayList.cs" />
     <Compile Include="Modules\Model\PlayModel.cs" />
+    <Compile Include="Modules\Model\Searcher.cs" />
+    <Compile Include="Modules\Model\SearchSong.cs" />
     <Compile Include="Modules\Model\SingerImage.cs" />
     <Compile Include="Modules\Model\SingleLrc.cs" />
     <Compile Include="Modules\ViewModel\DesktopLrcVM.cs" />
@@ -156,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="ScrollViewerStyleCollect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

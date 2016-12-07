@@ -754,7 +754,7 @@
                 <ControlTemplate TargetType="{x:Type ListBox}">
                     <Grid>
                         <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"/>
-                        <ScrollViewer Margin="1" Style="{DynamicResource SimpleScrollViewer}" Focusable="false" Background="{TemplateBinding Background}">
+                        <ScrollViewer Margin="1" Style="{DynamicResource AYScrollViewerStyle}" Focusable="false" Background="{TemplateBinding Background}">
 
                             <!-- StackPanel 用来显示子级，方法是将 IsItemsHost 设置为 True -->
                             <StackPanel Margin="2" IsItemsHost="true"/>

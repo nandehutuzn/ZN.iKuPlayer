@@ -315,15 +315,42 @@
             <Rectangle x:Name="ppx41" Style="{DynamicResource spectralLineStyle}" Canvas.Bottom="{Binding SpectrumBottom41}" Height="1" Canvas.Left="409.1"/>
             <Rectangle x:Name="ppx42" Style="{DynamicResource spectralLineStyle}" Canvas.Bottom="{Binding SpectrumBottom42}" Height="1" Canvas.Left="419.3"/> 
         </Canvas>
-        <!-- 歌词 -->
-        <Canvas Canvas.Left="10" Canvas.Top="173" IsHitTestVisible="False" Width="766" Height="214" ClipToBounds="True" 
-                ScrollViewer.VerticalScrollBarVisibility="Disabled">
-            <StackPanel x:Name="Lrc" IsHitTestVisible="False" Width="766" ClipToBounds="True" 
-                        ScrollViewer.VerticalScrollBarVisibility="Disabled" AllowDrop="False">
-                <StackPanel.Effect>
-                    <DropShadowEffect ShadowDepth="0" Color="Black" Opacity="1" BlurRadius="20"/>
-                </StackPanel.Effect>
-            </StackPanel>
+        <!-- 搜索框 -->
+        <Canvas Canvas.Left="443" Canvas.Top="0" IsHitTestVisible="False" Width="340" Height="380" ClipToBounds="True" 
+                ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="White" Opacity="0.5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="WaterMarkedTextBox" Grid.Row="0" Text="{Binding Text, FallbackValue='Hello World'}" />
+                <TextBlock IsHitTestVisible="False" Text="{Binding WatermarkText}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Text}" Value="" />
+                                        <Condition Binding="{Binding ElementName=WaterMarkedTextBox, Path=IsKeyboardFocused}" Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <MultiDataTrigger.Setters>
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </MultiDataTrigger.Setters>
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                <DataGrid Grid.Row="1" AutoGenerateColumns="False" VerticalAlignment="Top" CanUserSortColumns="False" Width="330" Margin="5"
+				CanUserResizeColumns="False" CanUserResizeRows="False" SelectionMode="Single" CanUserReorderColumns="False" RowHeaderWidth="0" CanUserAddRows="False">
+					<DataGrid.Columns>
+                        <DataGridCheckBoxColumn Width="10" Binding="{Binding Selected}"/>
+						<DataGridTextColumn Header="歌曲" Width="260" Binding="{Binding Song}"/>
+                        <DataGridTextColumn Header="歌手" Width="60" Binding="{Binding Singer}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
         </Canvas>
         <!-- 标题 -->
         <Label x:Name="TitleLabel" Content="{Binding TitleLabel}" Height="77" Canvas.Left="10" Canvas.Top="10" Width="766" Foreground="#CCFFFFFF" 

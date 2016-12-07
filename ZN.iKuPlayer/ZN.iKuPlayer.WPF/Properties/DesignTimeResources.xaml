@@ -4,6 +4,7 @@
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceDictionary Source="/ZN.iKuPlayer.WPF;component/MainWindowResources.xaml"/>
 		<ResourceDictionary Source="/ZN.iKuPlayer.WPF;component/AppResources.xaml"/>
+		<ResourceDictionary Source="/ZN.iKuPlayer.WPF;component/ScrollViewerStyleCollect.xaml"/>
 	</ResourceDictionary.MergedDictionaries>
 	<!-- 应该在此定义资源字典条目。-->
 </ResourceDictionary>
