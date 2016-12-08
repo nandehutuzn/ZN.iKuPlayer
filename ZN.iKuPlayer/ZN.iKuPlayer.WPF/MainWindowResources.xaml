@@ -243,8 +243,10 @@
                                     Style="{StaticResource btnOpenStyle}"/>
                             <CheckBox x:Name="LrcButton" Command="{Binding DesktopLrcSwitchCommand}" Content="桌面歌词" 
                                       Style="{StaticResource btnLrcStyle}"/>
-                            <Button x:Name="settingButton" Command="{Binding SettingCommand}" 
-                                    CommandParameter="{Binding ElementName=mainUC}" Style="{StaticResource btnSettingStyle}"/>
+                            <Button x:Name="settingButton" Command="{Binding SettingCommand}" Style="{StaticResource btnSettingStyle}"
+                                    CommandParameter="{Binding ElementName=mainUC}" >
+                                <!--<Image Source="/Image/search.png"/>-->
+                            </Button>
                             <Button x:Name="minimizeButton" Command="{Binding MinimizeCommand}" 
                                     CommandParameter="{Binding ElementName=mainUC}" Style="{StaticResource btnMinimizeStyle}"/>
                             <Button x:Name="closeButton" Command="{Binding CloseCommand}" CommandParameter="{Binding ElementName=mainUC}" 

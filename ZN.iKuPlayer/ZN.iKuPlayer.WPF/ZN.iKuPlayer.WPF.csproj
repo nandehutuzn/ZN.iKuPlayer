@@ -96,6 +96,7 @@
     <Compile Include="Modules\Model\SingleLrc.cs" />
     <Compile Include="Modules\ViewModel\DesktopLrcVM.cs" />
     <Compile Include="Modules\ViewModel\MainVM.cs" />
+    <Compile Include="Modules\ViewModel\SearchSongVM.cs" />
     <Compile Include="Modules\ViewModel\SettingVM.cs" />
     <Compile Include="Modules\ViewModel\SpectrumVM.cs" />
     <Compile Include="Modules\View\DesktopLyric.xaml.cs">
@@ -213,6 +214,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="iKu.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

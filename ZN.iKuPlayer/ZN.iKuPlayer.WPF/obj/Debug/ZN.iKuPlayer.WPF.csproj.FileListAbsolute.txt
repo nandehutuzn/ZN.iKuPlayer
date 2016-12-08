@@ -133,3 +133,4 @@ E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\ZN.iKuPlay
 E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\ZN.iKuPlayer.WPF.csproj.GenerateResource.Cache
 E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\ZN.iKuPlayer.WPF.exe
 E:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\ZN.iKuPlayer.WPF.pdb
+E:\GitHub\iKuPlayer\Code\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\obj\Debug\ScrollViewerStyleCollect.baml

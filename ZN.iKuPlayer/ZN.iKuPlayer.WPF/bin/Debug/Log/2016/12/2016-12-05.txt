@@ -1,5 +1,0 @@
-22:22:47:40  Exception Message: 索引超出范围。必须为非负值并小于集合大小。
-参数名: index 
- Position:    在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   在 System.Collections.Generic.List`1.get_Item(Int32 index)
-   在 ZN.iKuPlayer.WPF.Modules.Model.Lyric.FindLrc(Int32 time, Int32& index, String& lrc, Double& len, Double& progress) 位置 e:\GitHub\ZN.iKu\ZN.iKuPlayer\ZN.iKuPlayer\ZN.iKuPlayer.WPF\Modules\Model\Lyric.cs:行号 336

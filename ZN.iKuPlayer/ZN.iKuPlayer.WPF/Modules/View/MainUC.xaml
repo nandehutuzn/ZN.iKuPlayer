@@ -316,18 +316,18 @@
             <Rectangle x:Name="ppx42" Style="{DynamicResource spectralLineStyle}" Canvas.Bottom="{Binding SpectrumBottom42}" Height="1" Canvas.Left="419.3"/> 
         </Canvas>
         <!-- 搜索框 -->
-        <Canvas Canvas.Left="443" Canvas.Top="0" IsHitTestVisible="False" Width="340" Height="380" ClipToBounds="True" 
-                ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="White" Opacity="0.5">
+        <Canvas Canvas.Left="443" Canvas.Top="0"  Width="340" Height="380" ClipToBounds="True" 
+                ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="White" Opacity="0.5" Visibility="{Binding SearchCanvasVisibility, Converter={StaticResource boolToVisibility}}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBox x:Name="WaterMarkedTextBox" Grid.Row="0" Text="{Binding Text, FallbackValue='Hello World'}" />
-                <TextBlock IsHitTestVisible="False" Text="{Binding WatermarkText}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+                <TextBox x:Name="WaterMarkedTextBox" Grid.Row="0" KeyDown="WaterMarkedTextBox_KeyDown"/>
+                <TextBlock IsHitTestVisible="False" Text="请输入搜索内容" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray"
+                           Visibility="{Binding ElementName=WaterMarkedTextBox, Path=Text.IsEmpty, Converter={StaticResource boolToVisibility}}">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="Visibility" Value="Collapsed" />
                             <Style.Triggers>
                                 <MultiDataTrigger>
                                     <MultiDataTrigger.Conditions>
@@ -342,13 +342,23 @@
                         </Style>
                     </TextBlock.Style>
                 </TextBlock>
-                <DataGrid Grid.Row="1" AutoGenerateColumns="False" VerticalAlignment="Top" CanUserSortColumns="False" Width="330" Margin="5"
-				CanUserResizeColumns="False" CanUserResizeRows="False" SelectionMode="Single" CanUserReorderColumns="False" RowHeaderWidth="0" CanUserAddRows="False">
+                <DataGrid Grid.Row="1" AutoGenerateColumns="False"   Width="330" Margin="0,5" ItemsSource="{Binding SearchSongCollect}"
+				  CanUserAddRows="False"  CanUserDeleteRows="False" GridLinesVisibility="None" FontSize="13" IsHitTestVisible="True">
 					<DataGrid.Columns>
-                        <DataGridCheckBoxColumn Width="10" Binding="{Binding Selected}"/>
-						<DataGridTextColumn Header="歌曲" Width="260" Binding="{Binding Song}"/>
-                        <DataGridTextColumn Header="歌手" Width="60" Binding="{Binding Singer}"/>
+                        <DataGridTemplateColumn  SortMemberPath="IsSelected" Width="10">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}"
+                                              VerticalAlignment="Center" HorizontalAlignment="Center"
+                                              Command="{Binding Path=MainViewModel.SearchSongSelectedCommand, RelativeSource={RelativeSource Mode=FindAncestor, 
+                                        AncestorType={x:Type DataGrid}}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="歌曲" Width="230" Binding="{Binding Song.SongName}"/>
+                        <DataGridTextColumn Header="歌手" Width="60" Binding="{Binding Song.Singer}"/>
                     </DataGrid.Columns>
+                    
                 </DataGrid>
             </Grid>
         </Canvas>

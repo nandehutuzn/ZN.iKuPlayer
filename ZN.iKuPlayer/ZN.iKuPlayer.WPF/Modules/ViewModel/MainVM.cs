@@ -26,6 +26,11 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
 {
     class MainVM : ViewModelBase
     {
+        /// <summary>
+        /// MainVM实例
+        /// </summary>
+        public static MainVM Instance;
+
         private IntPtr _handle;
         /// <summary>
         /// Player 全局唯一实例
@@ -38,6 +43,7 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         private Config _config;
         public MainVM()
         {
+            Instance = this;
             Initlize();
             BlackBackground = new ImageBrush();
             BlackBackground.ImageSource = Imaging.CreateBitmapSourceFromHBitmap(Properties.Resources.BG2.GetHbitmap(),
@@ -50,6 +56,16 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
 
         private void Initlize()
         {
+            SearchSong ss1 = new SearchSong();
+            ss1.SongName = "歌曲1";
+            ss1.Singer = "歌手1";
+            SearchSong ss2 = new SearchSong();
+            ss2.SongName = "歌曲2";
+            ss2.Singer = "歌手2";
+            
+            SearchSongCollect.Add(new SearchSongVM(ss1));
+            SearchSongCollect.Add(new SearchSongVM(ss2));
+
             Config.LoadConfig(App.WorkPath + "\\config.db");
             _config = Config.GetInstance();
             //_spectrumListUI = new ObservableCollection<SpectrumVM>();
@@ -2021,6 +2037,18 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             }
         }
 
+        private bool _searchCanvasVisibility = false;
+        /// <summary>
+        /// 搜索面板可见性
+        /// </summary>
+        public bool SearchCanvasVisibility {
+            get { return _searchCanvasVisibility; }
+            set {
+                _searchCanvasVisibility = value;
+                RaisePropertyChanged("SearchCanvasVisibility");
+            }
+        }
+
         private RelayCommand _loadedCommand;
         /// <summary>
         /// 载入
@@ -2136,37 +2164,38 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             get {
                 return _settingCommand ?? (_settingCommand = new RelayCommand<Window>(o =>
                     {
-                        Setting setting = new Setting();
-                        setting.Owner = o;
-                        setting.ShowDialog();
+                        //Setting setting = new Setting();
+                        //setting.Owner = o;
+                        //setting.ShowDialog();
+                        SearchCanvasVisibility = !SearchCanvasVisibility;
                     }));
             }
         }
 
         private RelayCommand _lrcAdvanceCommand;
         /// <summary>
-        /// 歌词提前
+        /// 歌词延后
         /// </summary>
         public RelayCommand LrcAdvanceCommand {
             get {
                 return _lrcAdvanceCommand ?? (_lrcAdvanceCommand = new RelayCommand(() =>
                     {
                         if (LyricObj != null)
-                            LyricObj.Offset += 100;
+                            LyricObj.Offset -= 100;
                     }));
             }
         }
 
         private RelayCommand _lrcDelayCommand;
         /// <summary>
-        /// 歌词延后
+        /// 歌词提前
         /// </summary>
         public RelayCommand LrcDelayCommand {
             get {
                 return _lrcDelayCommand ?? (_lrcDelayCommand = new RelayCommand(() =>
                     {
                         if (LyricObj != null)
-                            LyricObj.Offset -= 100;
+                            LyricObj.Offset += 100;
                     }));
             }
         }
@@ -2651,5 +2680,46 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
         {
             TimeLabel = Helper.Seconds2Time(SliderValue) + "/" + TimeTotal;
         }
+
+        #region 搜索模块代码
+
+        private string _searchContext;
+        /// <summary>
+        /// 搜索内容
+        /// </summary>
+        public string SearchContext {
+            get { return _searchContext; }
+            set {
+                _searchContext = value;
+                RaisePropertyChanged("SearchContext");
+            }
+        }
+
+        private ObservableCollection<SearchSongVM> _searchSongCollect = new ObservableCollection<SearchSongVM>();
+        /// <summary>
+        /// 搜索结果信息
+        /// </summary>
+        public ObservableCollection<SearchSongVM> SearchSongCollect {
+            get { return _searchSongCollect; }
+            set {
+                _searchSongCollect = value;
+                RaisePropertyChanged("SearchSongCollect");
+            }
+        }
+
+        private RelayCommand _searchSongSelectedCommand;
+        /// <summary>
+        /// 搜索结果选中命令
+        /// </summary>
+        public RelayCommand SearchSongSelectedCommand {
+            get{
+                return _searchSongSelectedCommand ?? (_searchSongSelectedCommand = new RelayCommand(() =>
+                    {
+
+                    }));
+            }
+        }
+
+        #endregion
     }
 }

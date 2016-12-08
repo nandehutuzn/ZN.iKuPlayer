@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Interop;
 using ZN.iKuPlayer.WPF.Modules.ViewModel;
+using ZN.iKuPlayer.WPF.Modules.Model;
 
 namespace ZN.iKuPlayer.WPF.Modules.View
 {
@@ -24,6 +25,8 @@ namespace ZN.iKuPlayer.WPF.Modules.View
         public IntPtr MainHandle { get { return new WindowInteropHelper(this).Handle; } }
         public MainUC()
         {
+            //Searcher s = new Searcher();
+            //s.GetSearchResult("天后", 1);
             InitializeComponent(); 
         }
 
@@ -40,6 +43,19 @@ namespace ZN.iKuPlayer.WPF.Modules.View
         private void Progress_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             MainVM.DraggingProgressSlider = false;
+        }
+
+        private void WaterMarkedTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                string searchContext = WaterMarkedTextBox.Text.Trim();
+                if (!string.IsNullOrEmpty(searchContext))
+                {
+                    Searcher searcher = new Searcher();
+                    searcher.GetSearchResult(searchContext, 1);
+                }
+            }
         }
     }
 }

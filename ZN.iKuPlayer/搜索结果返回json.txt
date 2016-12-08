@@ -1,0 +1,262 @@
+ "code": 1,
+    "rows": 464,
+    "pages": 155,
+    "data": [
+        {
+            "vip": 0,
+            "song_id": 41862775,
+            "song_name": "可惜沒如果 (Live)",
+            "singer_id": 3685,
+            "singer_name": "林俊杰",
+            "artist_flag": 1,
+            "album_id": 2312324,
+            "album_name": "2016江苏卫视跨年演唱会",
+            "pick_count": 15374,
+            "audition_list": [
+                {
+                    "duration": "04:33",
+                    "suffix": "m4a",
+                    "bitRate": 32,
+                    "typeDescription": "流畅品质",
+                    "url": "http://om32.alicdn.com/169/7169/2100253608/1775455154_1479877509535.m4a?auth_key=d6cdea90c0fd5a2861f2aef3945ea400-1481770800-0-null",
+                    "size": "1.07 MB",
+                    "type": 0
+                },
+                {
+                    "duration": "04:33",
+                    "suffix": "mp3",
+                    "bitRate": 128,
+                    "typeDescription": "标准品质",
+                    "url": "http://m5.file.xiami.com/169/7169/2100253608/1775455154_59509906_l.mp3?auth_key=9df3405274bb83ca8687097835ab10fe-1481770800-0-null",
+                    "size": "4.17 MB",
+                    "type": 0
+                },
+                {
+                    "duration": "04:33",
+                    "suffix": "mp3",
+                    "bitRate": 320,
+                    "typeDescription": "超高品质",
+                    "url": "http://m6.file.xiami.com/169/7169/2100253608/1775455154_59509906_h.mp3?auth_key=3b52cd157e828be09237ed1beeb5ce4e-1481770800-0-null",
+                    "size": "10.43 MB",
+                    "type": 0
+                }
+            ],
+            "url_list": [
+                {
+                    "duration": "04:33",
+                    "suffix": "m4a",
+                    "bitRate": 32,
+                    "typeDescription": "流畅品质",
+                    "url": "http://om32.alicdn.com/169/7169/2100253608/1775455154_1479877509535.m4a?auth_key=d6cdea90c0fd5a2861f2aef3945ea400-1481770800-0-null",
+                    "size": "1.07 MB",
+                    "type": 0
+                },
+                {
+                    "duration": "04:33",
+                    "suffix": "mp3",
+                    "bitRate": 128,
+                    "typeDescription": "标准品质",
+                    "url": "http://m5.file.xiami.com/169/7169/2100253608/1775455154_59509906_l.mp3?auth_key=9df3405274bb83ca8687097835ab10fe-1481770800-0-null",
+                    "size": "4.17 MB",
+                    "type": 0
+                },
+                {
+                    "duration": "04:33",
+                    "suffix": "mp3",
+                    "bitRate": 320,
+                    "typeDescription": "超高品质",
+                    "url": "http://m6.file.xiami.com/169/7169/2100253608/1775455154_59509906_h.mp3?auth_key=3b52cd157e828be09237ed1beeb5ce4e-1481770800-0-null",
+                    "size": "10.43 MB",
+                    "type": 0
+                }
+            ],
+            "mv_list": [
+                {
+                    "id": 0,
+                    "duration": "04:33",
+                    "suffix": "mp4",
+                    "bitrate": 1777,
+                    "type_description": "1080P",
+                    "url": "http://otmv.alicdn.com/new/mv_3_22/a8/06/a8d4050bc1a3086566b1602fe6e85306.mp4?k=b22cff71d5167a2e&t=1481613245",
+                    "size": "64.22 MB",
+                    "type": 2,
+                    "durationMilliSecond": 273180,
+                    "pic_url": "http://3p.pic.ttdtweb.com/3p.ttpod.com/video/mv_pic/mv_pic_22/160_90/8868/323084/2261593.jpg",
+                    "videoId": 2261593,
+                    "typeDescription": "1080P",
+                    "picUrl": "http://3p.pic.ttdtweb.com/3p.ttpod.com/video/mv_pic/mv_pic_22/160_90/8868/323084/2261593.jpg",
+                    "lsize": 67339394
+                },
+                {
+                    "id": 0,
+                    "duration": "04:33",
+                    "suffix": "mp4",
+                    "bitrate": 500,
+                    "type_description": "标清",
+                    "url": "http://otmv.alicdn.com/new/mv_1_22/7a/8b/7a895c509465e1ac71b2cdf35a00e58b.mp4?k=3dcbf5e45f7922c2&t=1481613245",
+                    "size": "22.66 MB",
+                    "type": 0,
+                    "durationMilliSecond": 273180,
+                    "pic_url": "http://3p.pic.ttdtweb.com/3p.ttpod.com/video/mv_pic/mv_pic_22/160_90/8868/323084/2261593.jpg",
+                    "videoId": 2261593,
+                    "typeDescription": "标清",
+                    "picUrl": "http://3p.pic.ttdtweb.com/3p.ttpod.com/video/mv_pic/mv_pic_22/160_90/8868/323084/2261593.jpg",
+                    "lsize": 23764654
+                }
+            ]
+        },
+        {
+            "vip": 0,
+            "song_id": 1795260420,
+            "song_name": "关键词 (Live)",
+            "singer_id": 3685,
+            "singer_name": "林俊杰",
+            "artist_flag": 1,
+            "album_id": 2384161,
+            "album_name": "极限挑战 公益联欢会",
+            "pick_count": 100,
+            "audition_list": [
+                {
+                    "duration": "03:15",
+                    "suffix": "mp3",
+                    "bitRate": 128,
+                    "typeDescription": "标准品质",
+                    "url": "http://m5.file.xiami.com/812/634530812/2102651000/1795260420_1478662553710.mp3?auth_key=b7e3e066aba430185ad8e6244b3f800e-1481770800-0-null",
+                    "size": "2.98 MB",
+                    "type": 0
+                },
+                {
+                    "duration": "03:15",
+                    "suffix": "mp3",
+                    "bitRate": 320,
+                    "typeDescription": "超高品质",
+                    "url": "http://m6.file.xiami.com/812/634530812/2102651000/1795260420_1478662553710.mp3?auth_key=b7e3e066aba430185ad8e6244b3f800e-1481770800-0-null",
+                    "size": "7.44 MB",
+                    "type": 0
+                }
+            ],
+            "url_list": [
+                {
+                    "duration": "03:15",
+                    "suffix": "mp3",
+                    "bitRate": 128,
+                    "typeDescription": "标准品质",
+                    "url": "http://m5.file.xiami.com/812/634530812/2102651000/1795260420_1478662553710.mp3?auth_key=b7e3e066aba430185ad8e6244b3f800e-1481770800-0-null",
+                    "size": "2.98 MB",
+                    "type": 0
+                },
+                {
+                    "duration": "03:15",
+                    "suffix": "mp3",
+                    "bitRate": 320,
+                    "typeDescription": "超高品质",
+                    "url": "http://m6.file.xiami.com/812/634530812/2102651000/1795260420_1478662553710.mp3?auth_key=b7e3e066aba430185ad8e6244b3f800e-1481770800-0-null",
+                    "size": "7.44 MB",
+                    "type": 0
+                }
+            ]
+        },
+        {
+            "vip": 0,
+            "song_id": 41862776,
+            "song_name": "不为谁而作的歌 (Live)",
+            "singer_id": 3685,
+            "singer_name": "林俊杰",
+            "artist_flag": 1,
+            "album_id": 2312324,
+            "album_name": "2016江苏卫视跨年演唱会",
+            "pick_count": 10375,
+            "audition_list": [
+                {
+                    "duration": "03:57",
+                    "suffix": "m4a",
+                    "bitRate": 32,
+                    "typeDescription": "流畅品质",
+                    "url": "http://om32.alicdn.com/169/7169/2100253608/1775455156_1479877203987.m4a?auth_key=c8ce1d37191b5d70aa30277541c859df-1481770800-0-null",
+                    "size": "0.94 MB",
+                    "type": 0
+                },
+                {
+                    "duration": "03:57",
+                    "suffix": "mp3",
+                    "bitRate": 128,
+                    "typeDescription": "标准品质",
+                    "url": "http://m5.file.xiami.com/169/7169/2100253608/1775455156_59509908_l.mp3?auth_key=33108736cb931f6877ac96fb9c84ef8c-1481770800-0-null",
+                    "size": "3.63 MB",
+                    "type": 0
+                },
+                {
+                    "duration": "03:57",
+                    "suffix": "mp3",
+                    "bitRate": 320,
+                    "typeDescription": "超高品质",
+                    "url": "http://m6.file.xiami.com/169/7169/2100253608/1775455156_59509908_h.mp3?auth_key=21367f481a74142c7e67bc85b41e798b-1481770800-0-null",
+                    "size": "9.07 MB",
+                    "type": 0
+                }
+            ],
+            "url_list": [
+                {
+                    "duration": "03:57",
+                    "suffix": "m4a",
+                    "bitRate": 32,
+                    "typeDescription": "流畅品质",
+                    "url": "http://om32.alicdn.com/169/7169/2100253608/1775455156_1479877203987.m4a?auth_key=c8ce1d37191b5d70aa30277541c859df-1481770800-0-null",
+                    "size": "0.94 MB",
+                    "type": 0
+                },
+                {
+                    "duration": "03:57",
+                    "suffix": "mp3",
+                    "bitRate": 128,
+                    "typeDescription": "标准品质",
+                    "url": "http://m5.file.xiami.com/169/7169/2100253608/1775455156_59509908_l.mp3?auth_key=33108736cb931f6877ac96fb9c84ef8c-1481770800-0-null",
+                    "size": "3.63 MB",
+                    "type": 0
+                },
+                {
+                    "duration": "03:57",
+                    "suffix": "mp3",
+                    "bitRate": 320,
+                    "typeDescription": "超高品质",
+                    "url": "http://m6.file.xiami.com/169/7169/2100253608/1775455156_59509908_h.mp3?auth_key=21367f481a74142c7e67bc85b41e798b-1481770800-0-null",
+                    "size": "9.07 MB",
+                    "type": 0
+                }
+            ],
+            "mv_list": [
+                {
+                    "id": 0,
+                    "duration": "03:57",
+                    "suffix": "mp4",
+                    "bitrate": 2131,
+                    "type_description": "1080P",
+                    "url": "http://otmv.alicdn.com/new/mv_4_22/27/4d/27fd0a113750bde496f8f9f72a81484d.mp4?k=3265cbe2b86cbda2&t=1481613408",
+                    "size": "65.91 MB",
+                    "type": 2,
+                    "durationMilliSecond": 237700,
+                    "pic_url": "http://3p.pic.ttdtweb.com/3p.ttpod.com/video/mv_pic/mv_pic_22/160_90/8869/323099/2261696.jpg",
+                    "videoId": 2261696,
+                    "typeDescription": "1080P",
+                    "picUrl": "http://3p.pic.ttdtweb.com/3p.ttpod.com/video/mv_pic/mv_pic_22/160_90/8869/323099/2261696.jpg",
+                    "lsize": 69108087
+                },
+                {
+                    "id": 0,
+                    "duration": "03:57",
+                    "suffix": "mp4",
+                    "bitrate": 500,
+                    "type_description": "标清",
+                    "url": "http://otmv.alicdn.com/new/mv_1_22/4e/fd/4e3e8d6cb9ea8dd4bb8892d192630ffd.mp4?k=c69e894528abb4ac&t=1481613408",
+                    "size": "19.72 MB",
+                    "type": 0,
+                    "durationMilliSecond": 237700,
+                    "pic_url": "http://3p.pic.ttdtweb.com/3p.ttpod.com/video/mv_pic/mv_pic_22/160_90/8869/323099/2261696.jpg",
+                    "videoId": 2261696,
+                    "typeDescription": "标清",
+                    "picUrl": "http://3p.pic.ttdtweb.com/3p.ttpod.com/video/mv_pic/mv_pic_22/160_90/8869/323099/2261696.jpg",
+                    "lsize": 20680947
+                }
+            ]
+        }
+    ]
