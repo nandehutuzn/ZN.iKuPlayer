@@ -316,9 +316,10 @@
             <Rectangle x:Name="ppx42" Style="{DynamicResource spectralLineStyle}" Canvas.Bottom="{Binding SpectrumBottom42}" Height="1" Canvas.Left="419.3"/> 
         </Canvas>
         <!-- 搜索框 -->
-        <Canvas Canvas.Left="443" Canvas.Top="0"  Width="340" Height="380" ClipToBounds="True" 
+        
+        <Canvas Canvas.Left="443" Canvas.Top="0"  Width="340" Height="380" ClipToBounds="True" d:IsLocked="False" SnapsToDevicePixels="True"
                 ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="White" Opacity="0.5" Visibility="{Binding SearchCanvasVisibility, Converter={StaticResource boolToVisibility}}">
-            <Grid>
+        <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="*"/>
@@ -342,15 +343,27 @@
                         </Style>
                     </TextBlock.Style>
                 </TextBlock>
-                <DataGrid Grid.Row="1" AutoGenerateColumns="False"   Width="330" Margin="0,5" ItemsSource="{Binding SearchSongCollect}"
-				  CanUserAddRows="False"  CanUserDeleteRows="False" GridLinesVisibility="None" FontSize="13" IsHitTestVisible="True">
-					<DataGrid.Columns>
-                        <DataGridTemplateColumn  SortMemberPath="IsSelected" Width="10">
+                <DataGrid  Grid.Row="1" AutoGenerateColumns="False"   Width="330" Margin="0,5" ItemsSource="{Binding SearchSongCollect}"  IsTabStop="False" Cursor="Hand" d:IsLocked="False"
+				  CanUserAddRows="False"  CanUserDeleteRows="False" GridLinesVisibility="None" FontSize="13" IsHitTestVisible="True"  MouseLeftButtonDown="DataGrid_MouseLeftButtonDown">
+                    <DataGrid.RowStyle>
+                        <Style TargetType="{x:Type DataGridRow}">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Background" Value="#FFF1FAFF"/>
+                                    <Setter Property="FontSize" Value=" 20"/>
+                                    <Setter Property="Height" Value="30"/>
+                                    <Setter Property="Foreground" Value="Blue"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn SortMemberPath="IsSelected"  Width="10">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <CheckBox IsChecked="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}"
                                               VerticalAlignment="Center" HorizontalAlignment="Center"
-                                              Command="{Binding Path=MainViewModel.SearchSongSelectedCommand, RelativeSource={RelativeSource Mode=FindAncestor, 
+                                              Command="{Binding Path=DataContext.SearchSongSelectedCommand, RelativeSource={RelativeSource Mode=FindAncestor, 
                                         AncestorType={x:Type DataGrid}}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

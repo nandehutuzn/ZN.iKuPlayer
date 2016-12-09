@@ -62,9 +62,17 @@ namespace ZN.iKuPlayer.WPF.Modules.ViewModel
             SearchSong ss2 = new SearchSong();
             ss2.SongName = "歌曲2";
             ss2.Singer = "歌手2";
+            SearchSong ss3 = new SearchSong();
+            ss3.SongName = "歌曲3";
+            ss3.Singer = "歌手3";
+            SearchSong ss4 = new SearchSong();
+            ss4.SongName = "歌曲4";
+            ss4.Singer = "歌手4";
             
             SearchSongCollect.Add(new SearchSongVM(ss1));
             SearchSongCollect.Add(new SearchSongVM(ss2));
+            SearchSongCollect.Add(new SearchSongVM(ss3));
+            SearchSongCollect.Add(new SearchSongVM(ss4));
 
             Config.LoadConfig(App.WorkPath + "\\config.db");
             _config = Config.GetInstance();

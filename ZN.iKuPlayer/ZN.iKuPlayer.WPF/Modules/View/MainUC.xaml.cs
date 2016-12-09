@@ -47,15 +47,20 @@ namespace ZN.iKuPlayer.WPF.Modules.View
 
         private void WaterMarkedTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
-            {
-                string searchContext = WaterMarkedTextBox.Text.Trim();
-                if (!string.IsNullOrEmpty(searchContext))
-                {
-                    Searcher searcher = new Searcher();
-                    searcher.GetSearchResult(searchContext, 1);
-                }
-            }
+            //if (e.Key == Key.Enter)
+            //{
+            //    string searchContext = WaterMarkedTextBox.Text.Trim();
+            //    if (!string.IsNullOrEmpty(searchContext))
+            //    {
+            //        Searcher searcher = new Searcher();
+            //        searcher.GetSearchResult(searchContext, 1);
+            //    }
+            //}
+        }
+
+        private void DataGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
